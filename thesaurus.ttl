@@ -1,0 +1,969 @@
+@prefix : <http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence/> .
+
+<http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence> rdf:type owl:Ontology .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://www.w3.org/2004/02/skos/core#definition
+<http://www.w3.org/2004/02/skos/core#definition> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#prefLabel
+<http://www.w3.org/2004/02/skos/core#prefLabel> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.w3.org/2004/02/skos/core#broader
+<http://www.w3.org/2004/02/skos/core#broader> rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://data/frontlet/thesaurus#AgeCategory
+<http://data/frontlet/thesaurus#AgeCategory> rdf:type owl:Class .
+
+
+###  http://data/frontlet/thesaurus#DeathCause
+<http://data/frontlet/thesaurus#DeathCause> rdf:type owl:Class .
+
+
+###  http://data/frontlet/thesaurus#DeathNature
+<http://data/frontlet/thesaurus#DeathNature> rdf:type owl:Class .
+
+
+###  http://data/frontlet/thesaurus#ExclusionReason
+<http://data/frontlet/thesaurus#ExclusionReason> rdf:type owl:Class .
+
+
+###  http://data/frontlet/thesaurus#Gender
+<http://data/frontlet/thesaurus#Gender> rdf:type owl:Class .
+
+
+###  http://data/frontlet/thesaurus#InvolvementType
+<http://data/frontlet/thesaurus#InvolvementType> rdf:type owl:Class .
+
+
+###  http://data/frontlet/thesaurus#MediaType
+<http://data/frontlet/thesaurus#MediaType> rdf:type owl:Class .
+
+
+###  http://data/frontlet/thesaurus#OrganizationMode
+<http://data/frontlet/thesaurus#OrganizationMode> rdf:type owl:Class .
+
+
+###  http://data/frontlet/thesaurus#Service
+<http://data/frontlet/thesaurus#Service> rdf:type owl:Class .
+
+
+###  http://data/frontlet/thesaurus#Structure
+<http://data/frontlet/thesaurus#Structure> rdf:type owl:Class .
+
+
+###  http://data/frontlet/thesaurus#TransportationMode
+<http://data/frontlet/thesaurus#TransportationMode> rdf:type owl:Class .
+
+
+###  http://data/frontlet/thesaurus#VictimState
+<http://data/frontlet/thesaurus#VictimState> rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence#accident
+:accident rdf:type owl:NamedIndividual ,
+                   <http://data/frontlet/thesaurus#DeathNature> ;
+          <http://www.w3.org/2004/02/skos/core#broader> :deathNature ;
+          <http://www.w3.org/2004/02/skos/core#prefLabel> "accident"@en ,
+                                                          "accident"@fr .
+
+
+###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence#adult
+:adult rdf:type owl:NamedIndividual ,
+                <http://data/frontlet/thesaurus#AgeCategory> ;
+       <http://www.w3.org/2004/02/skos/core#broader> :ageCategory ;
+       <http://www.w3.org/2004/02/skos/core#definition> "30 ans à 59"@fr ;
+       <http://www.w3.org/2004/02/skos/core#prefLabel> "adult"@en ,
+                                                       "adulte"@fr .
+
+
+###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence#ageCategory
+:ageCategory rdf:type owl:NamedIndividual ,
+                      <http://data/frontlet/thesaurus#AgeCategory> ;
+             <http://www.w3.org/2004/02/skos/core#broader> :ageCategory ;
+             <http://www.w3.org/2004/02/skos/core#definition> "Catégorie d'âge de la personne"@fr ;
+             <http://www.w3.org/2004/02/skos/core#prefLabel> "age category"@en ,
+                                                             "catégorie d'âge"@fr .
+
+
+###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence#ageCategory_other
+:ageCategory_other rdf:type owl:NamedIndividual ,
+                            <http://data/frontlet/thesaurus#AgeCategory> ;
+                   <http://www.w3.org/2004/02/skos/core#prefLabel> "autre"@fr ,
+                                                                   "other"@en .
+
+
+###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence#air
+:air rdf:type owl:NamedIndividual ,
+              <http://data/frontlet/thesaurus#TransportationMode> ;
+     <http://www.w3.org/2004/02/skos/core#broader> :transportationMode ;
+     <http://www.w3.org/2004/02/skos/core#prefLabel> "air"@en ,
+                                                     "aérien"@fr .
+
+
+###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence#airplane
+:airplane rdf:type owl:NamedIndividual ,
+                   <http://data/frontlet/thesaurus#TransportationMode> ;
+          <http://www.w3.org/2004/02/skos/core#broader> :air ;
+          <http://www.w3.org/2004/02/skos/core#prefLabel> "airplane"@en ,
+                                                          "avion"@fr .
+
+
+###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence#army
+:army rdf:type owl:NamedIndividual ,
+               <http://data/frontlet/thesaurus#Service> ;
+      <http://www.w3.org/2004/02/skos/core#broader> :institution ;
+      <http://www.w3.org/2004/02/skos/core#prefLabel> "army"@en ,
+                                                      "armée"@fr .
+
+
+###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence#asphyxia
+:asphyxia rdf:type owl:NamedIndividual ,
+                   <http://data/frontlet/thesaurus#DeathCause> ;
+          <http://www.w3.org/2004/02/skos/core#broader> :deathCause ;
+          <http://www.w3.org/2004/02/skos/core#prefLabel> "asphyxia"@en ,
+                                                          "asphyxie"@fr .
+
+
+###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence#avalanche
+:avalanche rdf:type owl:NamedIndividual ,
+                    <http://data/frontlet/thesaurus#DeathCause> ;
+           <http://www.w3.org/2004/02/skos/core#broader> :environmentalHazard ;
+           <http://www.w3.org/2004/02/skos/core#prefLabel> "avalanche"@en ,
+                                                           "avalanche"@fr .
+
+
+###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence#bladedWeapon
+:bladedWeapon rdf:type owl:NamedIndividual ,
+                       <http://data/frontlet/thesaurus#DeathCause> ;
+              <http://www.w3.org/2004/02/skos/core#broader> :weapon ;
+              <http://www.w3.org/2004/02/skos/core#prefLabel> "arme blanche"@fr ,
+                                                              "bladed weapon"@en .
+
+
+###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence#borderGuard
+:borderGuard rdf:type owl:NamedIndividual ,
+                      <http://data/frontlet/thesaurus#Service> ;
+             <http://www.w3.org/2004/02/skos/core#broader> :institution ;
+             <http://www.w3.org/2004/02/skos/core#prefLabel> "border guard"@en ,
+                                                             "garde frontière"@fr .
+
+
+###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence#borderPost
+:borderPost rdf:type owl:NamedIndividual ,
+                     <http://data/frontlet/thesaurus#Structure> ;
+            <http://www.w3.org/2004/02/skos/core#broader> :structure ;
+            <http://www.w3.org/2004/02/skos/core#prefLabel> "border post"@en ,
+                                                            "poste frontière"@fr .
+
+
+###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence#bus
+:bus rdf:type owl:NamedIndividual ,
+              <http://data/frontlet/thesaurus#TransportationMode> ;
+     <http://www.w3.org/2004/02/skos/core#broader> :road ;
+     <http://www.w3.org/2004/02/skos/core#prefLabel> "bus"@en ,
+                                                     "bus"@fr .
+
+
+###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence#car
+:car rdf:type owl:NamedIndividual ,
+              <http://data/frontlet/thesaurus#TransportationMode> ;
+     <http://www.w3.org/2004/02/skos/core#broader> :road ;
+     <http://www.w3.org/2004/02/skos/core#prefLabel> "car"@en ,
+                                                     "voiture"@fr .
+
+
+###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence#carCrash
+:carCrash rdf:type owl:NamedIndividual ,
+                   <http://data/frontlet/thesaurus#DeathCause> ;
+          <http://www.w3.org/2004/02/skos/core#broader> :transportCrash ;
+          <http://www.w3.org/2004/02/skos/core#prefLabel> "accident de voiture"@fr ,
+                                                          "carCrash"@en .
+
+
+###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence#cargoShip
+:cargoShip rdf:type owl:NamedIndividual ,
+                    <http://data/frontlet/thesaurus#TransportationMode> ;
+           <http://www.w3.org/2004/02/skos/core#broader> :maritim ;
+           <http://www.w3.org/2004/02/skos/core#prefLabel> "cargo ship"@en ,
+                                                           "navire de marchandises"@fr .
+
+
+###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence#child
+:child rdf:type owl:NamedIndividual ,
+                <http://data/frontlet/thesaurus#AgeCategory> ;
+       <http://www.w3.org/2004/02/skos/core#broader> :ageCategory ;
+       <http://www.w3.org/2004/02/skos/core#definition> "2 ans à 11 ans"@fr ;
+       <http://www.w3.org/2004/02/skos/core#prefLabel> "child"@en ,
+                                                       "enfant"@fr .
+
+
+###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence#crashDuringCarChase
+:crashDuringCarChase rdf:type owl:NamedIndividual ,
+                              <http://data/frontlet/thesaurus#InvolvementType> ;
+                     <http://www.w3.org/2004/02/skos/core#broader> :typeOfInvolvment ;
+                     <http://www.w3.org/2004/02/skos/core#prefLabel> "accident lors d'une poursuite"@fr ,
+                                                                     "crash during a car chase"@en .
+
+
+###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence#crashDuringSupervisedMove
+:crashDuringSupervisedMove rdf:type owl:NamedIndividual ,
+                                    <http://data/frontlet/thesaurus#InvolvementType> ;
+                           <http://www.w3.org/2004/02/skos/core#broader> :typeOfInvolvment ;
+                           <http://www.w3.org/2004/02/skos/core#prefLabel> "accident lors d'un déplacement encadré"@fr ,
+                                                                           "crash during a supervised move"@en .
+
+
+###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence#dead
+:dead rdf:type owl:NamedIndividual ,
+               <http://data/frontlet/thesaurus#VictimState> ;
+      <http://www.w3.org/2004/02/skos/core#broader> :victimState ;
+      <http://www.w3.org/2004/02/skos/core#prefLabel> "dead"@en ,
+                                                      "mort"@fr .
+
+
+###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence#deathCause
+:deathCause rdf:type owl:NamedIndividual ,
+                     <http://data/frontlet/thesaurus#DeathCause> ;
+            <http://www.w3.org/2004/02/skos/core#definition> "Définit la cause de décès d'une victime"@fr ;
+            <http://www.w3.org/2004/02/skos/core#prefLabel> "cause de décès"@fr ,
+                                                            "death cause"@en .
+
+
+###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence#deathNature
+:deathNature rdf:type owl:NamedIndividual ,
+                      <http://data/frontlet/thesaurus#DeathNature> ;
+             <http://www.w3.org/2004/02/skos/core#definition> "Définit la nature de la cause de décès"@fr ;
+             <http://www.w3.org/2004/02/skos/core#prefLabel> "death nature"@en ,
+                                                             "nature de la mort"@fr .
+
+
+###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence#deathNature_homicide
+:deathNature_homicide rdf:type owl:NamedIndividual ,
+                               <http://data/frontlet/thesaurus#DeathNature> ;
+                      <http://www.w3.org/2004/02/skos/core#broader> :deathNature ;
+                      <http://www.w3.org/2004/02/skos/core#prefLabel> "homicide"@en ,
+                                                                      "homicide"@fr .
+
+
+###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence#digitalPress
+:digitalPress rdf:type owl:NamedIndividual ,
+                       <http://data/frontlet/thesaurus#MediaType> ;
+              <http://www.w3.org/2004/02/skos/core#broader> :press ;
+              <http://www.w3.org/2004/02/skos/core#prefLabel> "digital press"@en ,
+                                                              "presse numérique"@fr .
+
+
+###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence#drowning
+:drowning rdf:type owl:NamedIndividual ,
+                   <http://data/frontlet/thesaurus#DeathCause> ;
+          <http://www.w3.org/2004/02/skos/core#broader> :deathCause ;
+          <http://www.w3.org/2004/02/skos/core#prefLabel> "drowning"@en ,
+                                                          "noyade"@fr .
+
+
+###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence#electrocution
+:electrocution rdf:type owl:NamedIndividual ,
+                        <http://data/frontlet/thesaurus#DeathCause> ;
+               <http://www.w3.org/2004/02/skos/core#broader> :deathCause ;
+               <http://www.w3.org/2004/02/skos/core#prefLabel> "electrocution"@en ,
+                                                               "électrocution"@fr .
+
+
+###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence#environmentalHazard
+:environmentalHazard rdf:type owl:NamedIndividual ,
+                              <http://data/frontlet/thesaurus#DeathCause> ;
+                     <http://www.w3.org/2004/02/skos/core#broader> :deathCause ;
+                     <http://www.w3.org/2004/02/skos/core#prefLabel> "danger naturel"@fr ,
+                                                                     "environmental hazard"@en .
+
+
+###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence#exclusionReason
+:exclusionReason rdf:type owl:NamedIndividual ,
+                          <http://data/frontlet/thesaurus#ExclusionReason> ;
+                 <http://www.w3.org/2004/02/skos/core#prefLabel> "exclusion reason"@en ,
+                                                                 "raison de l'exclusion"@fr .
+
+
+###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence#exclusionReason_injured
+:exclusionReason_injured rdf:type owl:NamedIndividual ,
+                                  <http://data/frontlet/thesaurus#ExclusionReason> ;
+                         <http://www.w3.org/2004/02/skos/core#broader> :exclusionReason ;
+                         <http://www.w3.org/2004/02/skos/core#prefLabel> "blessé"@fr ,
+                                                                         "injured"@en .
+
+
+###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence#exclusionReason_missing
+:exclusionReason_missing rdf:type owl:NamedIndividual ,
+                                  <http://data/frontlet/thesaurus#ExclusionReason> ;
+                         <http://www.w3.org/2004/02/skos/core#broader> :exclusionReason ;
+                         <http://www.w3.org/2004/02/skos/core#prefLabel> "disparu"@fr ,
+                                                                         "missing"@en .
+
+
+###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence#exclusionReason_other
+:exclusionReason_other rdf:type owl:NamedIndividual ,
+                                <http://data/frontlet/thesaurus#ExclusionReason> ;
+                       <http://www.w3.org/2004/02/skos/core#broader> :exclusionReason ;
+                       <http://www.w3.org/2004/02/skos/core#prefLabel> "autre"@fr ,
+                                                                       "other"@en .
+
+
+###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence#exhaustion
+:exhaustion rdf:type owl:NamedIndividual ,
+                     <http://data/frontlet/thesaurus#DeathCause> ;
+            <http://www.w3.org/2004/02/skos/core#broader> :deathCause ;
+            <http://www.w3.org/2004/02/skos/core#prefLabel> "eshaustion"@en ,
+                                                            "épuisement"@fr .
+
+
+###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence#fall
+:fall rdf:type owl:NamedIndividual ,
+               <http://data/frontlet/thesaurus#DeathCause> ;
+      <http://www.w3.org/2004/02/skos/core#broader> :deathCause ;
+      <http://www.w3.org/2004/02/skos/core#prefLabel> "chute"@fr ,
+                                                      "fall"@en .
+
+
+###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence#fearEscapeAttempt
+:fearEscapeAttempt rdf:type owl:NamedIndividual ,
+                            <http://data/frontlet/thesaurus#InvolvementType> ;
+                   <http://www.w3.org/2004/02/skos/core#broader> :typeOfInvolvment ;
+                   <http://www.w3.org/2004/02/skos/core#prefLabel> "fear / escape attempt"@en ,
+                                                                   "peur/ tentative de fuite"@fr .
+
+
+###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence#ferryBoat
+:ferryBoat rdf:type owl:NamedIndividual ,
+                    <http://data/frontlet/thesaurus#TransportationMode> ;
+           <http://www.w3.org/2004/02/skos/core#broader> :maritim ;
+           <http://www.w3.org/2004/02/skos/core#prefLabel> "ferry"@fr ,
+                                                           "ferry boat"@en .
+
+
+###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence#fire
+:fire rdf:type owl:NamedIndividual ,
+               <http://data/frontlet/thesaurus#DeathCause> ;
+      <http://www.w3.org/2004/02/skos/core#broader> :deathCause ,
+                                                    :environmentalHazard ;
+      <http://www.w3.org/2004/02/skos/core#prefLabel> "fire"@en ,
+                                                      "incendie"@fr .
+
+
+###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence#fireArm
+:fireArm rdf:type owl:NamedIndividual ,
+                  <http://data/frontlet/thesaurus#DeathCause> ;
+         <http://www.w3.org/2004/02/skos/core#broader> :weapon ;
+         <http://www.w3.org/2004/02/skos/core#prefLabel> "arme à feu"@fr ,
+                                                         "fire arm"@en .
+
+
+###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence#flood
+:flood rdf:type owl:NamedIndividual ,
+                <http://data/frontlet/thesaurus#DeathCause> ;
+       <http://www.w3.org/2004/02/skos/core#broader> :environmentalHazard ;
+       <http://www.w3.org/2004/02/skos/core#prefLabel> "crue"@fr ,
+                                                       "flood"@en .
+
+
+###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence#gender
+:gender rdf:type owl:NamedIndividual ,
+                 <http://data/frontlet/thesaurus#Gender> ;
+        <http://www.w3.org/2004/02/skos/core#definition> "Genre de la personne"@fr ;
+        <http://www.w3.org/2004/02/skos/core#prefLabel> "gender"@en ,
+                                                        "genre"@fr .
+
+
+###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence#gender_female
+:gender_female rdf:type owl:NamedIndividual ,
+                        <http://data/frontlet/thesaurus#Gender> ;
+               <http://www.w3.org/2004/02/skos/core#broader> :gender ;
+               <http://www.w3.org/2004/02/skos/core#prefLabel> "female"@en ,
+                                                               "féminin"@fr .
+
+
+###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence#gender_male
+:gender_male rdf:type owl:NamedIndividual ,
+                      <http://data/frontlet/thesaurus#Gender> ;
+             <http://www.w3.org/2004/02/skos/core#broader> :gender ;
+             <http://www.w3.org/2004/02/skos/core#prefLabel> "male"@en ,
+                                                             "masculin"@fr .
+
+
+###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence#gender_other
+:gender_other rdf:type owl:NamedIndividual ,
+                       <http://data/frontlet/thesaurus#Gender> ;
+              <http://www.w3.org/2004/02/skos/core#broader> :gender ;
+              <http://www.w3.org/2004/02/skos/core#prefLabel> "autre"@fr ,
+                                                              "other"@en .
+
+
+###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence#gender_unknown
+:gender_unknown rdf:type owl:NamedIndividual ,
+                         <http://data/frontlet/thesaurus#Gender> ;
+                <http://www.w3.org/2004/02/skos/core#broader> :gender ;
+                <http://www.w3.org/2004/02/skos/core#prefLabel> "inconnu"@fr ,
+                                                                "unknown"@en .
+
+
+###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence#hanging
+:hanging rdf:type owl:NamedIndividual ,
+                  <http://data/frontlet/thesaurus#DeathCause> ;
+         <http://www.w3.org/2004/02/skos/core#broader> :deathCause ;
+         <http://www.w3.org/2004/02/skos/core#prefLabel> "hanging"@en ,
+                                                         "pendaison"@fr .
+
+
+###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence#healthInstitution
+:healthInstitution rdf:type owl:NamedIndividual ,
+                            <http://data/frontlet/thesaurus#Service> ;
+                   <http://www.w3.org/2004/02/skos/core#broader> :institution ;
+                   <http://www.w3.org/2004/02/skos/core#prefLabel> "health institution"@en ,
+                                                                   "service de santé"@fr .
+
+
+###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence#healthIssue
+:healthIssue rdf:type owl:NamedIndividual ,
+                      <http://data/frontlet/thesaurus#ExclusionReason> ;
+             <http://www.w3.org/2004/02/skos/core#broader> :exclusionReason ;
+             <http://www.w3.org/2004/02/skos/core#prefLabel> "Problème de santé"@fr ,
+                                                             "health issue"@en .
+
+
+###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence#hit
+:hit rdf:type owl:NamedIndividual ,
+              <http://data/frontlet/thesaurus#DeathCause> ;
+     <http://www.w3.org/2004/02/skos/core#broader> :deathCause ;
+     <http://www.w3.org/2004/02/skos/core#prefLabel> "hit"@en ,
+                                                     "percussion"@fr .
+
+
+###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence#hitByCar
+:hitByCar rdf:type owl:NamedIndividual ,
+                   <http://data/frontlet/thesaurus#DeathCause> ;
+          <http://www.w3.org/2004/02/skos/core#broader> :hit ;
+          <http://www.w3.org/2004/02/skos/core#prefLabel> "hit by car"@en ,
+                                                          "percussion par une voiture"@fr .
+
+
+###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence#hitByTrain
+:hitByTrain rdf:type owl:NamedIndividual ,
+                     <http://data/frontlet/thesaurus#DeathCause> ;
+            <http://www.w3.org/2004/02/skos/core#broader> :hit ;
+            <http://www.w3.org/2004/02/skos/core#prefLabel> "hit by train"@en ,
+                                                            "percussion par un train"@fr .
+
+
+###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence#hitByTruck
+:hitByTruck rdf:type owl:NamedIndividual ,
+                     <http://data/frontlet/thesaurus#DeathCause> ;
+            <http://www.w3.org/2004/02/skos/core#broader> :hit ;
+            <http://www.w3.org/2004/02/skos/core#prefLabel> "hit by truck"@en ,
+                                                            "percussion par un camion"@fr .
+
+
+###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence#hospitalClinic
+:hospitalClinic rdf:type owl:NamedIndividual ,
+                         <http://data/frontlet/thesaurus#Structure> ;
+                <http://www.w3.org/2004/02/skos/core#broader> :structure ;
+                <http://www.w3.org/2004/02/skos/core#prefLabel> "hospital/clinic"@en ,
+                                                                "hôpital/clinique"@fr .
+
+
+###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence#human
+:human rdf:type owl:NamedIndividual ,
+                <http://data/frontlet/thesaurus#TransportationMode> ;
+       <http://www.w3.org/2004/02/skos/core#broader> :transportationMode ;
+       <http://www.w3.org/2004/02/skos/core#prefLabel> "humain"@fr ,
+                                                       "human"@en .
+
+
+###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence#hypothermia
+:hypothermia rdf:type owl:NamedIndividual ,
+                      <http://data/frontlet/thesaurus#DeathCause> ;
+             <http://www.w3.org/2004/02/skos/core#broader> :deathCause ;
+             <http://www.w3.org/2004/02/skos/core#prefLabel> "hypothermia"@en ,
+                                                             "hypothermie"@fr .
+
+
+###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence#immigrationDetention
+:immigrationDetention rdf:type owl:NamedIndividual ,
+                               <http://data/frontlet/thesaurus#Structure> ;
+                      <http://www.w3.org/2004/02/skos/core#broader> :structure ;
+                      <http://www.w3.org/2004/02/skos/core#prefLabel> "centre de rétention"@fr ,
+                                                                      "immigration detention"@en .
+
+
+###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence#infant
+:infant rdf:type owl:NamedIndividual ,
+                 <http://data/frontlet/thesaurus#AgeCategory> ;
+        <http://www.w3.org/2004/02/skos/core#broader> :ageCategory ;
+        <http://www.w3.org/2004/02/skos/core#definition> "0 jour à 23 mois"@fr ;
+        <http://www.w3.org/2004/02/skos/core#prefLabel> "infant"@en ,
+                                                        "nourisson"@fr .
+
+
+###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence#institution
+:institution rdf:type owl:NamedIndividual ,
+                      <http://data/frontlet/thesaurus#Service> ;
+             <http://www.w3.org/2004/02/skos/core#prefLabel> "institution"@en ,
+                                                             "service"@fr .
+
+
+###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence#lackOfInformation
+:lackOfInformation rdf:type owl:NamedIndividual ,
+                            <http://data/frontlet/thesaurus#ExclusionReason> ;
+                   <http://www.w3.org/2004/02/skos/core#broader> :exclusionReason ;
+                   <http://www.w3.org/2004/02/skos/core#prefLabel> "lack of information"@en ,
+                                                                   "manque d'informations"@fr .
+
+
+###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence#maritim
+:maritim rdf:type owl:NamedIndividual ,
+                  <http://data/frontlet/thesaurus#TransportationMode> ;
+         <http://www.w3.org/2004/02/skos/core#broader> :transportationMode ;
+         <http://www.w3.org/2004/02/skos/core#prefLabel> "maritim"@en ,
+                                                         "maritime"@fr .
+
+
+###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence#mediaType
+:mediaType rdf:type owl:NamedIndividual ,
+                    <http://data/frontlet/thesaurus#MediaType> ;
+           <http://www.w3.org/2004/02/skos/core#definition> "Définit le type d'une source médiatique"@fr ;
+           <http://www.w3.org/2004/02/skos/core#prefLabel> "media type"@en ,
+                                                           "type de média"@fr .
+
+
+###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence#medicalIssue
+:medicalIssue rdf:type owl:NamedIndividual ,
+                       <http://data/frontlet/thesaurus#DeathCause> ;
+              <http://www.w3.org/2004/02/skos/core#broader> :deathCause ;
+              <http://www.w3.org/2004/02/skos/core#prefLabel> "medical issue"@en ,
+                                                              "médical"@fr .
+
+
+###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence#mine
+:mine rdf:type owl:NamedIndividual ,
+               <http://data/frontlet/thesaurus#DeathCause> ;
+      <http://www.w3.org/2004/02/skos/core#broader> :deathCause ;
+      <http://www.w3.org/2004/02/skos/core#prefLabel> "mine"@en ,
+                                                      "mine"@fr .
+
+
+###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence#missingAfterTakingOver
+:missingAfterTakingOver rdf:type owl:NamedIndividual ,
+                                 <http://data/frontlet/thesaurus#InvolvementType> ;
+                        <http://www.w3.org/2004/02/skos/core#broader> :typeOfInvolvment ;
+                        <http://www.w3.org/2004/02/skos/core#prefLabel> "disparition après prise en charge"@fr ,
+                                                                        "missing after taking over"@en .
+
+
+###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence#negligence
+:negligence rdf:type owl:NamedIndividual ,
+                     <http://data/frontlet/thesaurus#InvolvementType> ;
+            <http://www.w3.org/2004/02/skos/core#broader> :typeOfInvolvment ;
+            <http://www.w3.org/2004/02/skos/core#prefLabel> "negligence"@en ,
+                                                            "négligence"@fr .
+
+
+###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence#newspapers
+:newspapers rdf:type owl:NamedIndividual ,
+                     <http://data/frontlet/thesaurus#MediaType> ;
+            <http://www.w3.org/2004/02/skos/core#broader> :press ;
+            <http://www.w3.org/2004/02/skos/core#prefLabel> "journaux"@fr ,
+                                                            "newspapers"@en .
+
+
+###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence#noBorderCrossing
+:noBorderCrossing rdf:type owl:NamedIndividual ,
+                           <http://data/frontlet/thesaurus#ExclusionReason> ;
+                  <http://www.w3.org/2004/02/skos/core#broader> :exclusionReason ;
+                  <http://www.w3.org/2004/02/skos/core#prefLabel> "no border crossing"@en ,
+                                                                  "pas de traversée de frontière"@fr .
+
+
+###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence#notMigrant
+:notMigrant rdf:type owl:NamedIndividual ,
+                     <http://data/frontlet/thesaurus#ExclusionReason> ;
+            <http://www.w3.org/2004/02/skos/core#broader> :exclusionReason ;
+            <http://www.w3.org/2004/02/skos/core#prefLabel> "not migrant"@en ,
+                                                            "pas un migrant"@fr .
+
+
+###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence#organizationMode
+:organizationMode rdf:type owl:NamedIndividual ,
+                           <http://data/frontlet/thesaurus#OrganizationMode> ;
+                  <http://www.w3.org/2004/02/skos/core#definition> "Mode d'organisation de la personne pour franchir la frontière"@fr ;
+                  <http://www.w3.org/2004/02/skos/core#prefLabel> "mode d'organisation"@fr ,
+                                                                  "organization mode"@en .
+
+
+###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence#organizationMode_other
+:organizationMode_other rdf:type owl:NamedIndividual ,
+                                 <http://data/frontlet/thesaurus#OrganizationMode> ;
+                        <http://www.w3.org/2004/02/skos/core#broader> :organizationMode ;
+                        <http://www.w3.org/2004/02/skos/core#prefLabel> "autre"@fr ,
+                                                                        "other"@en .
+
+
+###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence#outsideZone
+:outsideZone rdf:type owl:NamedIndividual ,
+                      <http://data/frontlet/thesaurus#ExclusionReason> ;
+             <http://www.w3.org/2004/02/skos/core#broader> :exclusionReason ;
+             <http://www.w3.org/2004/02/skos/core#prefLabel> "hors périmètre"@fr ,
+                                                             "outsideZone"@en .
+
+
+###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence#poisoning
+:poisoning rdf:type owl:NamedIndividual ,
+                    <http://data/frontlet/thesaurus#DeathCause> ;
+           <http://www.w3.org/2004/02/skos/core#broader> :deathCause ;
+           <http://www.w3.org/2004/02/skos/core#prefLabel> "empoisonnement"@fr ,
+                                                           "poisoning"@en .
+
+
+###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence#police
+:police rdf:type owl:NamedIndividual ,
+                 <http://data/frontlet/thesaurus#Service> ;
+        <http://www.w3.org/2004/02/skos/core#broader> :institution ;
+        <http://www.w3.org/2004/02/skos/core#prefLabel> "police"@en ,
+                                                        "police"@fr .
+
+
+###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence#prenatal
+:prenatal rdf:type owl:NamedIndividual ,
+                   <http://data/frontlet/thesaurus#AgeCategory> ;
+          <http://www.w3.org/2004/02/skos/core#definition> "En gestation ou enfant mort-né"@fr ;
+          <http://www.w3.org/2004/02/skos/core#prefLabel> "prenatal"@en ,
+                                                          "prénatal"@fr .
+
+
+###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence#prenatalLoss
+:prenatalLoss rdf:type owl:NamedIndividual ,
+                       <http://data/frontlet/thesaurus#DeathCause> ;
+              <http://www.w3.org/2004/02/skos/core#broader> :deathCause ;
+              <http://www.w3.org/2004/02/skos/core#prefLabel> "perte prénatale"@fr ,
+                                                              "prenatal loss"@en .
+
+
+###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence#press
+:press rdf:type owl:NamedIndividual ,
+                <http://data/frontlet/thesaurus#MediaType> ;
+       <http://www.w3.org/2004/02/skos/core#broader> :mediaType ;
+       <http://www.w3.org/2004/02/skos/core#prefLabel> "press"@en ,
+                                                       "presse"@fr .
+
+
+###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence#pushback
+:pushback rdf:type owl:NamedIndividual ,
+                   <http://data/frontlet/thesaurus#InvolvementType> ;
+          <http://www.w3.org/2004/02/skos/core#broader> :typeOfInvolvment ;
+          <http://www.w3.org/2004/02/skos/core#prefLabel> "pushback"@en ,
+                                                          "refoulement"@fr .
+
+
+###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence#radio
+:radio rdf:type owl:NamedIndividual ,
+                <http://data/frontlet/thesaurus#MediaType> ;
+       <http://www.w3.org/2004/02/skos/core#prefLabel> "radio"@en ,
+                                                       "radio"@fr .
+
+
+###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence#rail
+:rail rdf:type owl:NamedIndividual ,
+               <http://data/frontlet/thesaurus#TransportationMode> ;
+      <http://www.w3.org/2004/02/skos/core#broader> :transportationMode ;
+      <http://www.w3.org/2004/02/skos/core#prefLabel> "ferroviaire"@fr ,
+                                                      "rail"@en .
+
+
+###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence#receptionCenter
+:receptionCenter rdf:type owl:NamedIndividual ,
+                          <http://data/frontlet/thesaurus#Structure> ;
+                 <http://www.w3.org/2004/02/skos/core#broader> :structure ;
+                 <http://www.w3.org/2004/02/skos/core#prefLabel> "centre d'acceuil"@fr ,
+                                                                 "reception center"@en .
+
+
+###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence#refuge
+:refuge rdf:type owl:NamedIndividual ,
+                 <http://data/frontlet/thesaurus#Structure> ;
+        <http://www.w3.org/2004/02/skos/core#broader> :structure ;
+        <http://www.w3.org/2004/02/skos/core#prefLabel> "refuge"@en ,
+                                                        "refuge"@fr .
+
+
+###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence#road
+:road rdf:type owl:NamedIndividual ,
+               <http://data/frontlet/thesaurus#TransportationMode> ;
+      <http://www.w3.org/2004/02/skos/core#broader> :transportationMode ;
+      <http://www.w3.org/2004/02/skos/core#prefLabel> "road"@en ,
+                                                      "routier"@fr .
+
+
+###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence#rockFall
+:rockFall rdf:type owl:NamedIndividual ,
+                   <http://data/frontlet/thesaurus#DeathCause> ;
+          <http://www.w3.org/2004/02/skos/core#broader> :environmentalHazard ;
+          <http://www.w3.org/2004/02/skos/core#prefLabel> "chute de pierre"@fr ,
+                                                          "rock fall" .
+
+
+###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence#selfOrganization
+:selfOrganization rdf:type owl:NamedIndividual ,
+                           <http://data/frontlet/thesaurus#OrganizationMode> ;
+                  <http://www.w3.org/2004/02/skos/core#broader> :organizationMode ;
+                  <http://www.w3.org/2004/02/skos/core#prefLabel> "auto-organisation"@fr ,
+                                                                  "self-organization"@en .
+
+
+###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence#senior
+:senior rdf:type owl:NamedIndividual ,
+                 <http://data/frontlet/thesaurus#AgeCategory> ;
+        <http://www.w3.org/2004/02/skos/core#broader> :ageCategory ;
+        <http://www.w3.org/2004/02/skos/core#definition> "Plus de 60 ans"@fr ;
+        <http://www.w3.org/2004/02/skos/core#prefLabel> "senior"@en ,
+                                                        "sénior"@fr .
+
+
+###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence#smallBoat
+:smallBoat rdf:type owl:NamedIndividual ,
+                    <http://data/frontlet/thesaurus#TransportationMode> ;
+           <http://www.w3.org/2004/02/skos/core#broader> :maritim ;
+           <http://www.w3.org/2004/02/skos/core#prefLabel> "petite embarcation"@fr ,
+                                                           "small boat"@en .
+
+
+###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence#socialNetwork
+:socialNetwork rdf:type owl:NamedIndividual ,
+                        <http://data/frontlet/thesaurus#MediaType> ;
+               <http://www.w3.org/2004/02/skos/core#broader> :mediaType ;
+               <http://www.w3.org/2004/02/skos/core#prefLabel> "réseaux sociaux"@fr ,
+                                                               "social network"@en .
+
+
+###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence#starvedThirsty
+:starvedThirsty rdf:type owl:NamedIndividual ,
+                         <http://data/frontlet/thesaurus#DeathCause> ;
+                <http://www.w3.org/2004/02/skos/core#broader> :deathCause ;
+                <http://www.w3.org/2004/02/skos/core#prefLabel> "mort de faim ou de soif"@fr ,
+                                                                "starved or thirsty"@en .
+
+
+###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence#stoaway
+:stoaway rdf:type owl:NamedIndividual ,
+                  <http://data/frontlet/thesaurus#OrganizationMode> ;
+         <http://www.w3.org/2004/02/skos/core#broader> :organizationMode ;
+         <http://www.w3.org/2004/02/skos/core#prefLabel> "passeurs"@fr ,
+                                                         "stoaway"@en .
+
+
+###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence#structure
+:structure rdf:type owl:NamedIndividual ,
+                    <http://data/frontlet/thesaurus#Structure> ;
+           <http://www.w3.org/2004/02/skos/core#prefLabel> "structure"@en ,
+                                                           "structure"@fr .
+
+
+###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence#suicide
+:suicide rdf:type owl:NamedIndividual ,
+                  <http://data/frontlet/thesaurus#DeathNature> ;
+         <http://www.w3.org/2004/02/skos/core#broader> :deathNature ;
+         <http://www.w3.org/2004/02/skos/core#prefLabel> "suicide"@en ,
+                                                         "suicide"@fr .
+
+
+###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence#swimming
+:swimming rdf:type owl:NamedIndividual ,
+                   <http://data/frontlet/thesaurus#TransportationMode> ;
+          <http://www.w3.org/2004/02/skos/core#broader> :human ;
+          <http://www.w3.org/2004/02/skos/core#prefLabel> "nage"@fr ,
+                                                          "swimming"@en .
+
+
+###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence#teenager
+:teenager rdf:type owl:NamedIndividual ,
+                   <http://data/frontlet/thesaurus#AgeCategory> ;
+          <http://www.w3.org/2004/02/skos/core#broader> :ageCategory ;
+          <http://www.w3.org/2004/02/skos/core#definition> "12 ans à 17 ans"@fr ;
+          <http://www.w3.org/2004/02/skos/core#prefLabel> "adolescent"@fr ,
+                                                          "teenager"@en .
+
+
+###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence#television
+:television rdf:type owl:NamedIndividual ,
+                     <http://data/frontlet/thesaurus#MediaType> ;
+            <http://www.w3.org/2004/02/skos/core#broader> :mediaType ;
+            <http://www.w3.org/2004/02/skos/core#prefLabel> "television"@en ,
+                                                            "télévision"@fr .
+
+
+###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence#traffic
+:traffic rdf:type owl:NamedIndividual ,
+                  <http://data/frontlet/thesaurus#OrganizationMode> ;
+         <http://www.w3.org/2004/02/skos/core#broader> :organizationMode ;
+         <http://www.w3.org/2004/02/skos/core#prefLabel> "traffic"@en ,
+                                                         "traffique"@fr .
+
+
+###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence#train
+:train rdf:type owl:NamedIndividual ,
+                <http://data/frontlet/thesaurus#TransportationMode> ;
+       <http://www.w3.org/2004/02/skos/core#broader> :rail ;
+       <http://www.w3.org/2004/02/skos/core#prefLabel> "train"@en ,
+                                                       "train"@fr .
+
+
+###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence#trainCrash
+:trainCrash rdf:type owl:NamedIndividual ,
+                     <http://data/frontlet/thesaurus#DeathCause> ;
+            <http://www.w3.org/2004/02/skos/core#broader> :transportCrash ;
+            <http://www.w3.org/2004/02/skos/core#prefLabel> "accident de train"@fr ,
+                                                            "train crash"@en .
+
+
+###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence#transportCrash
+:transportCrash rdf:type owl:NamedIndividual ,
+                         <http://data/frontlet/thesaurus#DeathCause> ;
+                <http://www.w3.org/2004/02/skos/core#broader> :deathCause ;
+                <http://www.w3.org/2004/02/skos/core#prefLabel> "accident de transport"@fr ,
+                                                                "transport crash"@en .
+
+
+###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence#transportationMode
+:transportationMode rdf:type owl:NamedIndividual ,
+                             <http://data/frontlet/thesaurus#TransportationMode> ;
+                    <http://www.w3.org/2004/02/skos/core#definition> "Définit le mode de transport utilisé par la victime" ;
+                    <http://www.w3.org/2004/02/skos/core#prefLabel> "mode de transport"@fr ,
+                                                                    "transportation mode"@en .
+
+
+###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence#transportationMode_other
+:transportationMode_other rdf:type owl:NamedIndividual ,
+                                   <http://data/frontlet/thesaurus#TransportationMode> ;
+                          <http://www.w3.org/2004/02/skos/core#broader> :transportationMode ;
+                          <http://www.w3.org/2004/02/skos/core#prefLabel> "autre"@fr ,
+                                                                          "other"@en .
+
+
+###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence#truck
+:truck rdf:type owl:NamedIndividual ,
+                <http://data/frontlet/thesaurus#TransportationMode> ;
+       <http://www.w3.org/2004/02/skos/core#broader> :road ;
+       <http://www.w3.org/2004/02/skos/core#prefLabel> "camion"@fr ,
+                                                       "truck"@en .
+
+
+###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence#truckCrash
+:truckCrash rdf:type owl:NamedIndividual ,
+                     <http://data/frontlet/thesaurus#DeathCause> ;
+            <http://www.w3.org/2004/02/skos/core#broader> :transportCrash ;
+            <http://www.w3.org/2004/02/skos/core#prefLabel> "accident de camion"@fr ,
+                                                            "truck crash"@en .
+
+
+###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence#typeOfInvolvment
+:typeOfInvolvment rdf:type owl:NamedIndividual ,
+                           <http://data/frontlet/thesaurus#InvolvementType> ;
+                  <http://www.w3.org/2004/02/skos/core#definition> "Définit la nature associée à l’implication d’un service"@fr ;
+                  <http://www.w3.org/2004/02/skos/core#prefLabel> "type de l'implication"@fr ,
+                                                                  "type of involvment"@en .
+
+
+###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence#typeOfInvolvment_homicide
+:typeOfInvolvment_homicide rdf:type owl:NamedIndividual ,
+                                    <http://data/frontlet/thesaurus#InvolvementType> ;
+                           <http://www.w3.org/2004/02/skos/core#broader> :typeOfInvolvment ;
+                           <http://www.w3.org/2004/02/skos/core#prefLabel> "homicide"@en ,
+                                                                           "homicide"@fr .
+
+
+###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence#typeOfInvolvment_violence
+:typeOfInvolvment_violence rdf:type owl:NamedIndividual ,
+                                    <http://data/frontlet/thesaurus#InvolvementType> ;
+                           <http://www.w3.org/2004/02/skos/core#broader> :typeOfInvolvment ;
+                           <http://www.w3.org/2004/02/skos/core#prefLabel> "violence"@en ,
+                                                                           "violence"@fr .
+
+
+###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence#victimState
+:victimState rdf:type owl:NamedIndividual ,
+                      <http://data/frontlet/thesaurus#VictimState> ;
+             <http://www.w3.org/2004/02/skos/core#definition> "Définit l'état de la victime"@fr ;
+             <http://www.w3.org/2004/02/skos/core#prefLabel> "victim state"@en ,
+                                                             "état de la victime"@fr .
+
+
+###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence#victimState_injured
+:victimState_injured rdf:type owl:NamedIndividual ,
+                              <http://data/frontlet/thesaurus#VictimState> ;
+                     <http://www.w3.org/2004/02/skos/core#broader> :victimState ;
+                     <http://www.w3.org/2004/02/skos/core#prefLabel> "blessé"@fr ,
+                                                                     "injured"@en .
+
+
+###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence#victimState_missing
+:victimState_missing rdf:type owl:NamedIndividual ,
+                              <http://data/frontlet/thesaurus#VictimState> ;
+                     <http://www.w3.org/2004/02/skos/core#broader> :victimState ;
+                     <http://www.w3.org/2004/02/skos/core#prefLabel> "disparu"@fr ,
+                                                                     "missing"@en .
+
+
+###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence#victimState_other
+:victimState_other rdf:type owl:NamedIndividual ,
+                            <http://data/frontlet/thesaurus#VictimState> ;
+                   <http://www.w3.org/2004/02/skos/core#broader> :victimState ;
+                   <http://www.w3.org/2004/02/skos/core#prefLabel> "autre"@fr ,
+                                                                   "other"@en .
+
+
+###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence#walk
+:walk rdf:type owl:NamedIndividual ,
+               <http://data/frontlet/thesaurus#TransportationMode> ;
+      <http://www.w3.org/2004/02/skos/core#broader> :human ;
+      <http://www.w3.org/2004/02/skos/core#prefLabel> "marche"@fr ,
+                                                      "walk"@en .
+
+
+###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence#weapon
+:weapon rdf:type owl:NamedIndividual ,
+                 <http://data/frontlet/thesaurus#DeathCause> ;
+        <http://www.w3.org/2004/02/skos/core#broader> :deathCause ;
+        <http://www.w3.org/2004/02/skos/core#prefLabel> "arme"@fr ,
+                                                        "weapon"@en .
+
+
+###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence#youngAdult
+:youngAdult rdf:type owl:NamedIndividual ,
+                     <http://data/frontlet/thesaurus#AgeCategory> ;
+            <http://www.w3.org/2004/02/skos/core#definition> "18 ans à 29 ans"@fr ;
+            <http://www.w3.org/2004/02/skos/core#prefLabel> "jeune adulte"@fr ,
+                                                            "young adult"@en .
+
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi

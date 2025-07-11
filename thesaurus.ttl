@@ -14,6 +14,10 @@
 #    Annotation properties
 #################################################################
 
+###  http://www.w3.org/2000/01/rdf-schema#label
+rdfs:label rdfs:comment "Person"@en .
+
+
 ###  http://www.w3.org/2004/02/skos/core#definition
 <http://www.w3.org/2004/02/skos/core#definition> rdf:type owl:AnnotationProperty .
 
@@ -25,24 +29,6 @@
 #################################################################
 #    Object Properties
 #################################################################
-
-###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence#hasAgeInterval
-:hasAgeInterval rdf:type owl:ObjectProperty ;
-                rdfs:domain :AgeClass ;
-                rdfs:range <http://data/frontlet/thesaurus#AgeCategory> .
-
-
-###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence#hasDeathCause
-:hasDeathCause rdf:type owl:ObjectProperty ;
-               rdfs:domain :Death ;
-               rdfs:range <http://data/frontlet/thesaurus#DeathCause> .
-
-
-###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence#hasDeathNature
-:hasDeathNature rdf:type owl:ObjectProperty ;
-                rdfs:domain :Death ;
-                rdfs:range <http://data/frontlet/thesaurus#DeathNature> .
-
 
 ###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence/aged
 :aged rdf:type owl:ObjectProperty ;
@@ -66,6 +52,24 @@
 :composedOf rdf:type owl:ObjectProperty ;
             rdfs:domain :Trajectory ;
             rdfs:range :Event .
+
+
+###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence/hasAgeInterval
+:hasAgeInterval rdf:type owl:ObjectProperty ;
+                rdfs:domain :AgeClass ;
+                rdfs:range <http://data/frontlet/thesaurus#AgeCategory> .
+
+
+###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence/hasDeathCause
+:hasDeathCause rdf:type owl:ObjectProperty ;
+               rdfs:domain :Death ;
+               rdfs:range <http://data/frontlet/thesaurus#DeathCause> .
+
+
+###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence/hasDeathNature
+:hasDeathNature rdf:type owl:ObjectProperty ;
+                rdfs:domain :Death ;
+                rdfs:range <http://data/frontlet/thesaurus#DeathNature> .
 
 
 ###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence/hasGender
@@ -207,11 +211,15 @@
 
 
 ###  http://data/frontlet/thesaurus#DeathCause
-<http://data/frontlet/thesaurus#DeathCause> rdf:type owl:Class .
+<http://data/frontlet/thesaurus#DeathCause> rdf:type owl:Class ;
+                                            rdfs:label "Cause de la mort"@fr ,
+                                                       "Death cause"@en .
 
 
 ###  http://data/frontlet/thesaurus#DeathNature
-<http://data/frontlet/thesaurus#DeathNature> rdf:type owl:Class .
+<http://data/frontlet/thesaurus#DeathNature> rdf:type owl:Class ;
+                                             rdfs:label "Death nature"@en ,
+                                                        "Nature de la mort"@fr .
 
 
 ###  http://data/frontlet/thesaurus#ExclusionReason
@@ -219,7 +227,9 @@
 
 
 ###  http://data/frontlet/thesaurus#Gender
-<http://data/frontlet/thesaurus#Gender> rdf:type owl:Class .
+<http://data/frontlet/thesaurus#Gender> rdf:type owl:Class ;
+                                        rdfs:label "Gender"@en ,
+                                                   "Genre"@fr .
 
 
 ###  http://data/frontlet/thesaurus#InvolvementType
@@ -271,7 +281,9 @@
 
 ###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence/Call
 :Call rdf:type owl:Class ;
-      rdfs:subClassOf :Event .
+      rdfs:subClassOf :Event ;
+      rdfs:label "Appel"@fr ,
+                 "Call"@en .
 
 
 ###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence/CivilSociety
@@ -281,22 +293,30 @@
 
 ###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence/Control
 :Control rdf:type owl:Class ;
-         rdfs:subClassOf :Event .
+         rdfs:subClassOf :Event ;
+         rdfs:label "Control"@en ,
+                    "Contrôle"@fr .
 
 
 ###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence/Conversation
 :Conversation rdf:type owl:Class ;
-              rdfs:subClassOf :Event .
+              rdfs:subClassOf :Event ;
+              rdfs:label "Conversation"@en ,
+                         "Conversation"@fr .
 
 
 ###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence/CorpseAnalysis
 :CorpseAnalysis rdf:type owl:Class ;
-                rdfs:subClassOf :Event .
+                rdfs:subClassOf :Event ;
+                rdfs:label "Analyse du corps"@fr ,
+                           "Corpse analysis"@en .
 
 
 ###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence/CorpseRepatriation
 :CorpseRepatriation rdf:type owl:Class ;
-                    rdfs:subClassOf :Event .
+                    rdfs:subClassOf :Event ;
+                    rdfs:label "Corpse repatriation"@en ,
+                               "Rapatriement du corps"@fr .
 
 
 ###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence/Country
@@ -305,7 +325,9 @@
 
 ###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence/Death
 :Death rdf:type owl:Class ;
-       rdfs:subClassOf :Violence .
+       rdfs:subClassOf :Violence ;
+       rdfs:label "Death"@en ,
+                  "Mort"@fr .
 
 
 ###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence/DeathCertificate
@@ -314,7 +336,9 @@
 
 
 ###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence/Event
-:Event rdf:type owl:Class .
+:Event rdf:type owl:Class ;
+       rdfs:label "Event"@en ,
+                  "Evènement"@fr .
 
 
 ###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence/Family
@@ -324,12 +348,16 @@
 
 ###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence/Inhumation
 :Inhumation rdf:type owl:Class ;
-            rdfs:subClassOf :Event .
+            rdfs:subClassOf :Event ;
+            rdfs:label "Inhumation"@en ,
+                       "Inhumation"@fr .
 
 
 ###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence/Injury
 :Injury rdf:type owl:Class ;
-        rdfs:subClassOf :Violence .
+        rdfs:subClassOf :Violence ;
+        rdfs:label "Blessure"@fr ,
+                   "Injury"@en .
 
 
 ###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence/Media
@@ -353,12 +381,16 @@
 
 ###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence/Testimony
 :Testimony rdf:type owl:Class ;
-           rdfs:subClassOf :Event .
+           rdfs:subClassOf :Event ;
+           rdfs:label "Testimony"@en ,
+                      "Témoignage"@fr .
 
 
 ###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence/Trace
 :Trace rdf:type owl:Class ;
-       rdfs:subClassOf :Event .
+       rdfs:subClassOf :Event ;
+       rdfs:label "Trace"@en ,
+                  "Trace"@fr .
 
 
 ###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence/Trajectory
@@ -367,7 +399,14 @@
 
 ###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence/Violence
 :Violence rdf:type owl:Class ;
-          rdfs:subClassOf :Event .
+          rdfs:subClassOf :Event ;
+          rdfs:label "Violence"@en ,
+                     "Violence"@fr .
+
+
+###  https://schema.org/Person
+<https://schema.org/Person> rdfs:label "Person"@en ,
+                                       "Personne"@fr .
 
 
 #################################################################

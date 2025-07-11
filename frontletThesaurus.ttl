@@ -1,0 +1,971 @@
+@prefix : <http://data/frontlet/thesaurus#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@base <http://data/frontlet/thesaurus#> .
+
+<http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence> rdf:type owl:Ontology ;
+                                                                         owl:versionIRI <http://data/frontlet/thesaurus/1.0> ;
+                                                                         owl:imports <http://www.w3.org/2004/02/skos/core> ;
+                                                                         rdfs:comment "Ontologie définissant les concepts SKOS permettant de déclarer les valeurs des propriétés énumérées utilisé dans frontlet"@fr .
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://data/frontlet/thesaurus#AgeCategory
+:AgeCategory rdf:type owl:Class ;
+             rdfs:subClassOf skos:Concept .
+
+
+###  http://data/frontlet/thesaurus#DeathCause
+:DeathCause rdf:type owl:Class ;
+            rdfs:subClassOf skos:Concept ;
+            rdfs:label "Cause de la mort"@fr ,
+                       "Death cause"@en .
+
+
+###  http://data/frontlet/thesaurus#DeathNature
+:DeathNature rdf:type owl:Class ;
+             rdfs:subClassOf skos:Concept ;
+             rdfs:label "Death nature"@en ,
+                        "Nature de la mort"@fr .
+
+
+###  http://data/frontlet/thesaurus#ExclusionReason
+:ExclusionReason rdf:type owl:Class ;
+                 rdfs:subClassOf skos:Concept .
+
+
+###  http://data/frontlet/thesaurus#Gender
+:Gender rdf:type owl:Class ;
+        rdfs:subClassOf skos:Concept ;
+        rdfs:label "Gender"@en ,
+                   "Genre"@fr .
+
+
+###  http://data/frontlet/thesaurus#InvolvementType
+:InvolvementType rdf:type owl:Class ;
+                 rdfs:subClassOf skos:Concept .
+
+
+###  http://data/frontlet/thesaurus#MediaType
+:MediaType rdf:type owl:Class ;
+           rdfs:subClassOf skos:Concept .
+
+
+###  http://data/frontlet/thesaurus#OrganizationMode
+:OrganizationMode rdf:type owl:Class ;
+                  rdfs:subClassOf skos:Concept .
+
+
+###  http://data/frontlet/thesaurus#Service
+:Service rdf:type owl:Class ;
+         rdfs:subClassOf skos:Concept .
+
+
+###  http://data/frontlet/thesaurus#Structure
+:Structure rdf:type owl:Class ;
+           rdfs:subClassOf skos:Concept .
+
+
+###  http://data/frontlet/thesaurus#TransportationMode
+:TransportationMode rdf:type owl:Class ;
+                    rdfs:subClassOf skos:Concept .
+
+
+###  http://data/frontlet/thesaurus#VictimState
+:VictimState rdf:type owl:Class ;
+             rdfs:subClassOf skos:Concept .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://data/frontlet/thesaurus#accident
+:accident rdf:type owl:NamedIndividual ,
+                   :DeathNature ;
+          skos:broader :deathNature ;
+          skos:prefLabel "accident"@en ,
+                         "accident"@fr .
+
+
+###  http://data/frontlet/thesaurus#adult
+:adult rdf:type owl:NamedIndividual ,
+                :AgeCategory ;
+       skos:broader :ageCategory ;
+       skos:definition "30 ans à 59"@fr ;
+       skos:prefLabel "adult"@en ,
+                      "adulte"@fr .
+
+
+###  http://data/frontlet/thesaurus#ageCategory
+:ageCategory rdf:type owl:NamedIndividual ,
+                      :AgeCategory ;
+             skos:broader :ageCategory ;
+             skos:definition "Catégorie d'âge de la personne"@fr ;
+             skos:prefLabel "age category"@en ,
+                            "catégorie d'âge"@fr .
+
+
+###  http://data/frontlet/thesaurus#ageCategory_other
+:ageCategory_other rdf:type owl:NamedIndividual ,
+                            :AgeCategory ;
+                   skos:prefLabel "autre"@fr ,
+                                  "other"@en .
+
+
+###  http://data/frontlet/thesaurus#air
+:air rdf:type owl:NamedIndividual ,
+              :TransportationMode ;
+     skos:broader :transportationMode ;
+     skos:prefLabel "air"@en ,
+                    "aérien"@fr .
+
+
+###  http://data/frontlet/thesaurus#airplane
+:airplane rdf:type owl:NamedIndividual ,
+                   :TransportationMode ;
+          skos:broader :air ;
+          skos:prefLabel "airplane"@en ,
+                         "avion"@fr .
+
+
+###  http://data/frontlet/thesaurus#army
+:army rdf:type owl:NamedIndividual ,
+               :Service ;
+      skos:broader :institution ;
+      skos:prefLabel "army"@en ,
+                     "armée"@fr .
+
+
+###  http://data/frontlet/thesaurus#asphyxia
+:asphyxia rdf:type owl:NamedIndividual ,
+                   :DeathCause ;
+          skos:broader :deathCause ;
+          skos:prefLabel "asphyxia"@en ,
+                         "asphyxie"@fr .
+
+
+###  http://data/frontlet/thesaurus#avalanche
+:avalanche rdf:type owl:NamedIndividual ,
+                    :DeathCause ;
+           skos:broader :environmentalHazard ;
+           skos:prefLabel "avalanche"@en ,
+                          "avalanche"@fr .
+
+
+###  http://data/frontlet/thesaurus#bladedWeapon
+:bladedWeapon rdf:type owl:NamedIndividual ,
+                       :DeathCause ;
+              skos:broader :weapon ;
+              skos:prefLabel "arme blanche"@fr ,
+                             "bladed weapon"@en .
+
+
+###  http://data/frontlet/thesaurus#borderGuard
+:borderGuard rdf:type owl:NamedIndividual ,
+                      :Service ;
+             skos:broader :institution ;
+             skos:prefLabel "border guard"@en ,
+                            "garde frontière"@fr .
+
+
+###  http://data/frontlet/thesaurus#borderPost
+:borderPost rdf:type owl:NamedIndividual ,
+                     :Structure ;
+            skos:broader :structure ;
+            skos:prefLabel "border post"@en ,
+                           "poste frontière"@fr .
+
+
+###  http://data/frontlet/thesaurus#bus
+:bus rdf:type owl:NamedIndividual ,
+              :TransportationMode ;
+     skos:broader :road ;
+     skos:prefLabel "bus"@en ,
+                    "bus"@fr .
+
+
+###  http://data/frontlet/thesaurus#car
+:car rdf:type owl:NamedIndividual ,
+              :TransportationMode ;
+     skos:broader :road ;
+     skos:prefLabel "car"@en ,
+                    "voiture"@fr .
+
+
+###  http://data/frontlet/thesaurus#carCrash
+:carCrash rdf:type owl:NamedIndividual ,
+                   :DeathCause ;
+          skos:broader :transportCrash ;
+          skos:prefLabel "accident de voiture"@fr ,
+                         "carCrash"@en .
+
+
+###  http://data/frontlet/thesaurus#cargoShip
+:cargoShip rdf:type owl:NamedIndividual ,
+                    :TransportationMode ;
+           skos:broader :maritim ;
+           skos:prefLabel "cargo ship"@en ,
+                          "navire de marchandises"@fr .
+
+
+###  http://data/frontlet/thesaurus#child
+:child rdf:type owl:NamedIndividual ,
+                :AgeCategory ;
+       skos:broader :ageCategory ;
+       skos:definition "2 ans à 11 ans"@fr ;
+       skos:prefLabel "child"@en ,
+                      "enfant"@fr .
+
+
+###  http://data/frontlet/thesaurus#crashDuringCarChase
+:crashDuringCarChase rdf:type owl:NamedIndividual ,
+                              :InvolvementType ;
+                     skos:broader :typeOfInvolvment ;
+                     skos:prefLabel "accident lors d'une poursuite"@fr ,
+                                    "crash during a car chase"@en .
+
+
+###  http://data/frontlet/thesaurus#crashDuringSupervisedMove
+:crashDuringSupervisedMove rdf:type owl:NamedIndividual ,
+                                    :InvolvementType ;
+                           skos:broader :typeOfInvolvment ;
+                           skos:prefLabel "accident lors d'un déplacement encadré"@fr ,
+                                          "crash during a supervised move"@en .
+
+
+###  http://data/frontlet/thesaurus#dead
+:dead rdf:type owl:NamedIndividual ,
+               :VictimState ;
+      skos:broader :victimState ;
+      skos:prefLabel "dead"@en ,
+                     "mort"@fr .
+
+
+###  http://data/frontlet/thesaurus#deathCause
+:deathCause rdf:type owl:NamedIndividual ,
+                     :DeathCause ;
+            skos:definition "Définit la cause de décès d'une victime"@fr ;
+            skos:prefLabel "cause de décès"@fr ,
+                           "death cause"@en .
+
+
+###  http://data/frontlet/thesaurus#deathNature
+:deathNature rdf:type owl:NamedIndividual ,
+                      :DeathNature ;
+             skos:definition "Définit la nature de la cause de décès"@fr ;
+             skos:prefLabel "death nature"@en ,
+                            "nature de la mort"@fr .
+
+
+###  http://data/frontlet/thesaurus#deathNature_homicide
+:deathNature_homicide rdf:type owl:NamedIndividual ,
+                               :DeathNature ;
+                      skos:broader :deathNature ;
+                      skos:prefLabel "homicide"@en ,
+                                     "homicide"@fr .
+
+
+###  http://data/frontlet/thesaurus#digitalPress
+:digitalPress rdf:type owl:NamedIndividual ,
+                       :MediaType ;
+              skos:broader :press ;
+              skos:prefLabel "digital press"@en ,
+                             "presse numérique"@fr .
+
+
+###  http://data/frontlet/thesaurus#drowning
+:drowning rdf:type owl:NamedIndividual ,
+                   :DeathCause ;
+          skos:broader :deathCause ;
+          skos:prefLabel "drowning"@en ,
+                         "noyade"@fr .
+
+
+###  http://data/frontlet/thesaurus#electrocution
+:electrocution rdf:type owl:NamedIndividual ,
+                        :DeathCause ;
+               skos:broader :deathCause ;
+               skos:prefLabel "electrocution"@en ,
+                              "électrocution"@fr .
+
+
+###  http://data/frontlet/thesaurus#environmentalHazard
+:environmentalHazard rdf:type owl:NamedIndividual ,
+                              :DeathCause ;
+                     skos:broader :deathCause ;
+                     skos:prefLabel "danger naturel"@fr ,
+                                    "environmental hazard"@en .
+
+
+###  http://data/frontlet/thesaurus#exclusionReason
+:exclusionReason rdf:type owl:NamedIndividual ,
+                          :ExclusionReason ;
+                 skos:prefLabel "exclusion reason"@en ,
+                                "raison de l'exclusion"@fr .
+
+
+###  http://data/frontlet/thesaurus#exclusionReason_injured
+:exclusionReason_injured rdf:type owl:NamedIndividual ,
+                                  :ExclusionReason ;
+                         skos:broader :exclusionReason ;
+                         skos:prefLabel "blessé"@fr ,
+                                        "injured"@en .
+
+
+###  http://data/frontlet/thesaurus#exclusionReason_missing
+:exclusionReason_missing rdf:type owl:NamedIndividual ,
+                                  :ExclusionReason ;
+                         skos:broader :exclusionReason ;
+                         skos:prefLabel "disparu"@fr ,
+                                        "missing"@en .
+
+
+###  http://data/frontlet/thesaurus#exclusionReason_other
+:exclusionReason_other rdf:type owl:NamedIndividual ,
+                                :ExclusionReason ;
+                       skos:broader :exclusionReason ;
+                       skos:prefLabel "autre"@fr ,
+                                      "other"@en .
+
+
+###  http://data/frontlet/thesaurus#exhaustion
+:exhaustion rdf:type owl:NamedIndividual ,
+                     :DeathCause ;
+            skos:broader :deathCause ;
+            skos:prefLabel "eshaustion"@en ,
+                           "épuisement"@fr .
+
+
+###  http://data/frontlet/thesaurus#fall
+:fall rdf:type owl:NamedIndividual ,
+               :DeathCause ;
+      skos:broader :deathCause ;
+      skos:prefLabel "chute"@fr ,
+                     "fall"@en .
+
+
+###  http://data/frontlet/thesaurus#fearEscapeAttempt
+:fearEscapeAttempt rdf:type owl:NamedIndividual ,
+                            :InvolvementType ;
+                   skos:broader :typeOfInvolvment ;
+                   skos:prefLabel "fear / escape attempt"@en ,
+                                  "peur/ tentative de fuite"@fr .
+
+
+###  http://data/frontlet/thesaurus#ferryBoat
+:ferryBoat rdf:type owl:NamedIndividual ,
+                    :TransportationMode ;
+           skos:broader :maritim ;
+           skos:prefLabel "ferry"@fr ,
+                          "ferry boat"@en .
+
+
+###  http://data/frontlet/thesaurus#fire
+:fire rdf:type owl:NamedIndividual ,
+               :DeathCause ;
+      skos:broader :deathCause ,
+                   :environmentalHazard ;
+      skos:prefLabel "fire"@en ,
+                     "incendie"@fr .
+
+
+###  http://data/frontlet/thesaurus#fireArm
+:fireArm rdf:type owl:NamedIndividual ,
+                  :DeathCause ;
+         skos:broader :weapon ;
+         skos:prefLabel "arme à feu"@fr ,
+                        "fire arm"@en .
+
+
+###  http://data/frontlet/thesaurus#flood
+:flood rdf:type owl:NamedIndividual ,
+                :DeathCause ;
+       skos:broader :environmentalHazard ;
+       skos:prefLabel "crue"@fr ,
+                      "flood"@en .
+
+
+###  http://data/frontlet/thesaurus#gender
+:gender rdf:type owl:NamedIndividual ,
+                 :Gender ;
+        skos:definition "Genre de la personne"@fr ;
+        skos:prefLabel "gender"@en ,
+                       "genre"@fr .
+
+
+###  http://data/frontlet/thesaurus#gender_female
+:gender_female rdf:type owl:NamedIndividual ,
+                        :Gender ;
+               skos:broader :gender ;
+               skos:prefLabel "female"@en ,
+                              "féminin"@fr .
+
+
+###  http://data/frontlet/thesaurus#gender_male
+:gender_male rdf:type owl:NamedIndividual ,
+                      :Gender ;
+             skos:broader :gender ;
+             skos:prefLabel "male"@en ,
+                            "masculin"@fr .
+
+
+###  http://data/frontlet/thesaurus#gender_other
+:gender_other rdf:type owl:NamedIndividual ,
+                       :Gender ;
+              skos:broader :gender ;
+              skos:prefLabel "autre"@fr ,
+                             "other"@en .
+
+
+###  http://data/frontlet/thesaurus#gender_unknown
+:gender_unknown rdf:type owl:NamedIndividual ,
+                         :Gender ;
+                skos:broader :gender ;
+                skos:prefLabel "inconnu"@fr ,
+                               "unknown"@en .
+
+
+###  http://data/frontlet/thesaurus#hanging
+:hanging rdf:type owl:NamedIndividual ,
+                  :DeathCause ;
+         skos:broader :deathCause ;
+         skos:prefLabel "hanging"@en ,
+                        "pendaison"@fr .
+
+
+###  http://data/frontlet/thesaurus#healthInstitution
+:healthInstitution rdf:type owl:NamedIndividual ,
+                            :Service ;
+                   skos:broader :institution ;
+                   skos:prefLabel "health institution"@en ,
+                                  "service de santé"@fr .
+
+
+###  http://data/frontlet/thesaurus#healthIssue
+:healthIssue rdf:type owl:NamedIndividual ,
+                      :ExclusionReason ;
+             skos:broader :exclusionReason ;
+             skos:prefLabel "Problème de santé"@fr ,
+                            "health issue"@en .
+
+
+###  http://data/frontlet/thesaurus#hit
+:hit rdf:type owl:NamedIndividual ,
+              :DeathCause ;
+     skos:broader :deathCause ;
+     skos:prefLabel "hit"@en ,
+                    "percussion"@fr .
+
+
+###  http://data/frontlet/thesaurus#hitByCar
+:hitByCar rdf:type owl:NamedIndividual ,
+                   :DeathCause ;
+          skos:broader :hit ;
+          skos:prefLabel "hit by car"@en ,
+                         "percussion par une voiture"@fr .
+
+
+###  http://data/frontlet/thesaurus#hitByTrain
+:hitByTrain rdf:type owl:NamedIndividual ,
+                     :DeathCause ;
+            skos:broader :hit ;
+            skos:prefLabel "hit by train"@en ,
+                           "percussion par un train"@fr .
+
+
+###  http://data/frontlet/thesaurus#hitByTruck
+:hitByTruck rdf:type owl:NamedIndividual ,
+                     :DeathCause ;
+            skos:broader :hit ;
+            skos:prefLabel "hit by truck"@en ,
+                           "percussion par un camion"@fr .
+
+
+###  http://data/frontlet/thesaurus#hospitalClinic
+:hospitalClinic rdf:type owl:NamedIndividual ,
+                         :Structure ;
+                skos:broader :structure ;
+                skos:prefLabel "hospital/clinic"@en ,
+                               "hôpital/clinique"@fr .
+
+
+###  http://data/frontlet/thesaurus#human
+:human rdf:type owl:NamedIndividual ,
+                :TransportationMode ;
+       skos:broader :transportationMode ;
+       skos:prefLabel "humain"@fr ,
+                      "human"@en .
+
+
+###  http://data/frontlet/thesaurus#hypothermia
+:hypothermia rdf:type owl:NamedIndividual ,
+                      :DeathCause ;
+             skos:broader :deathCause ;
+             skos:prefLabel "hypothermia"@en ,
+                            "hypothermie"@fr .
+
+
+###  http://data/frontlet/thesaurus#immigrationDetention
+:immigrationDetention rdf:type owl:NamedIndividual ,
+                               :Structure ;
+                      skos:broader :structure ;
+                      skos:prefLabel "centre de rétention"@fr ,
+                                     "immigration detention"@en .
+
+
+###  http://data/frontlet/thesaurus#infant
+:infant rdf:type owl:NamedIndividual ,
+                 :AgeCategory ;
+        skos:broader :ageCategory ;
+        skos:definition "0 jour à 23 mois"@fr ;
+        skos:prefLabel "infant"@en ,
+                       "nourisson"@fr .
+
+
+###  http://data/frontlet/thesaurus#institution
+:institution rdf:type owl:NamedIndividual ,
+                      :Service ;
+             skos:prefLabel "institution"@en ,
+                            "service"@fr .
+
+
+###  http://data/frontlet/thesaurus#lackOfInformation
+:lackOfInformation rdf:type owl:NamedIndividual ,
+                            :ExclusionReason ;
+                   skos:broader :exclusionReason ;
+                   skos:prefLabel "lack of information"@en ,
+                                  "manque d'informations"@fr .
+
+
+###  http://data/frontlet/thesaurus#maritim
+:maritim rdf:type owl:NamedIndividual ,
+                  :TransportationMode ;
+         skos:broader :transportationMode ;
+         skos:prefLabel "maritim"@en ,
+                        "maritime"@fr .
+
+
+###  http://data/frontlet/thesaurus#mediaType
+:mediaType rdf:type owl:NamedIndividual ,
+                    :MediaType ;
+           skos:definition "Définit le type d'une source médiatique"@fr ;
+           skos:prefLabel "media type"@en ,
+                          "type de média"@fr .
+
+
+###  http://data/frontlet/thesaurus#medicalIssue
+:medicalIssue rdf:type owl:NamedIndividual ,
+                       :DeathCause ;
+              skos:broader :deathCause ;
+              skos:prefLabel "medical issue"@en ,
+                             "médical"@fr .
+
+
+###  http://data/frontlet/thesaurus#mine
+:mine rdf:type owl:NamedIndividual ,
+               :DeathCause ;
+      skos:broader :deathCause ;
+      skos:prefLabel "mine"@en ,
+                     "mine"@fr .
+
+
+###  http://data/frontlet/thesaurus#missingAfterTakingOver
+:missingAfterTakingOver rdf:type owl:NamedIndividual ,
+                                 :InvolvementType ;
+                        skos:broader :typeOfInvolvment ;
+                        skos:prefLabel "disparition après prise en charge"@fr ,
+                                       "missing after taking over"@en .
+
+
+###  http://data/frontlet/thesaurus#negligence
+:negligence rdf:type owl:NamedIndividual ,
+                     :InvolvementType ;
+            skos:broader :typeOfInvolvment ;
+            skos:prefLabel "negligence"@en ,
+                           "négligence"@fr .
+
+
+###  http://data/frontlet/thesaurus#newspapers
+:newspapers rdf:type owl:NamedIndividual ,
+                     :MediaType ;
+            skos:broader :press ;
+            skos:prefLabel "journaux"@fr ,
+                           "newspapers"@en .
+
+
+###  http://data/frontlet/thesaurus#noBorderCrossing
+:noBorderCrossing rdf:type owl:NamedIndividual ,
+                           :ExclusionReason ;
+                  skos:broader :exclusionReason ;
+                  skos:prefLabel "no border crossing"@en ,
+                                 "pas de traversée de frontière"@fr .
+
+
+###  http://data/frontlet/thesaurus#notMigrant
+:notMigrant rdf:type owl:NamedIndividual ,
+                     :ExclusionReason ;
+            skos:broader :exclusionReason ;
+            skos:prefLabel "not migrant"@en ,
+                           "pas un migrant"@fr .
+
+
+###  http://data/frontlet/thesaurus#organizationMode
+:organizationMode rdf:type owl:NamedIndividual ,
+                           :OrganizationMode ;
+                  skos:definition "Mode d'organisation de la personne pour franchir la frontière"@fr ;
+                  skos:prefLabel "mode d'organisation"@fr ,
+                                 "organization mode"@en .
+
+
+###  http://data/frontlet/thesaurus#organizationMode_other
+:organizationMode_other rdf:type owl:NamedIndividual ,
+                                 :OrganizationMode ;
+                        skos:broader :organizationMode ;
+                        skos:prefLabel "autre"@fr ,
+                                       "other"@en .
+
+
+###  http://data/frontlet/thesaurus#outsideZone
+:outsideZone rdf:type owl:NamedIndividual ,
+                      :ExclusionReason ;
+             skos:broader :exclusionReason ;
+             skos:prefLabel "hors périmètre"@fr ,
+                            "outsideZone"@en .
+
+
+###  http://data/frontlet/thesaurus#poisoning
+:poisoning rdf:type owl:NamedIndividual ,
+                    :DeathCause ;
+           skos:broader :deathCause ;
+           skos:prefLabel "empoisonnement"@fr ,
+                          "poisoning"@en .
+
+
+###  http://data/frontlet/thesaurus#police
+:police rdf:type owl:NamedIndividual ,
+                 :Service ;
+        skos:broader :institution ;
+        skos:prefLabel "police"@en ,
+                       "police"@fr .
+
+
+###  http://data/frontlet/thesaurus#prenatal
+:prenatal rdf:type owl:NamedIndividual ,
+                   :AgeCategory ;
+          skos:definition "En gestation ou enfant mort-né"@fr ;
+          skos:prefLabel "prenatal"@en ,
+                         "prénatal"@fr .
+
+
+###  http://data/frontlet/thesaurus#prenatalLoss
+:prenatalLoss rdf:type owl:NamedIndividual ,
+                       :DeathCause ;
+              skos:broader :deathCause ;
+              skos:prefLabel "perte prénatale"@fr ,
+                             "prenatal loss"@en .
+
+
+###  http://data/frontlet/thesaurus#press
+:press rdf:type owl:NamedIndividual ,
+                :MediaType ;
+       skos:broader :mediaType ;
+       skos:prefLabel "press"@en ,
+                      "presse"@fr .
+
+
+###  http://data/frontlet/thesaurus#pushback
+:pushback rdf:type owl:NamedIndividual ,
+                   :InvolvementType ;
+          skos:broader :typeOfInvolvment ;
+          skos:prefLabel "pushback"@en ,
+                         "refoulement"@fr .
+
+
+###  http://data/frontlet/thesaurus#radio
+:radio rdf:type owl:NamedIndividual ,
+                :MediaType ;
+       skos:prefLabel "radio"@en ,
+                      "radio"@fr .
+
+
+###  http://data/frontlet/thesaurus#rail
+:rail rdf:type owl:NamedIndividual ,
+               :TransportationMode ;
+      skos:broader :transportationMode ;
+      skos:prefLabel "ferroviaire"@fr ,
+                     "rail"@en .
+
+
+###  http://data/frontlet/thesaurus#receptionCenter
+:receptionCenter rdf:type owl:NamedIndividual ,
+                          :Structure ;
+                 skos:broader :structure ;
+                 skos:prefLabel "centre d'acceuil"@fr ,
+                                "reception center"@en .
+
+
+###  http://data/frontlet/thesaurus#refuge
+:refuge rdf:type owl:NamedIndividual ,
+                 :Structure ;
+        skos:broader :structure ;
+        skos:prefLabel "refuge"@en ,
+                       "refuge"@fr .
+
+
+###  http://data/frontlet/thesaurus#road
+:road rdf:type owl:NamedIndividual ,
+               :TransportationMode ;
+      skos:broader :transportationMode ;
+      skos:prefLabel "road"@en ,
+                     "routier"@fr .
+
+
+###  http://data/frontlet/thesaurus#rockFall
+:rockFall rdf:type owl:NamedIndividual ,
+                   :DeathCause ;
+          skos:broader :environmentalHazard ;
+          skos:prefLabel "chute de pierre"@fr ,
+                         "rock fall" .
+
+
+###  http://data/frontlet/thesaurus#selfOrganization
+:selfOrganization rdf:type owl:NamedIndividual ,
+                           :OrganizationMode ;
+                  skos:broader :organizationMode ;
+                  skos:prefLabel "auto-organisation"@fr ,
+                                 "self-organization"@en .
+
+
+###  http://data/frontlet/thesaurus#senior
+:senior rdf:type owl:NamedIndividual ,
+                 :AgeCategory ;
+        skos:broader :ageCategory ;
+        skos:definition "Plus de 60 ans"@fr ;
+        skos:prefLabel "senior"@en ,
+                       "sénior"@fr .
+
+
+###  http://data/frontlet/thesaurus#smallBoat
+:smallBoat rdf:type owl:NamedIndividual ,
+                    :TransportationMode ;
+           skos:broader :maritim ;
+           skos:prefLabel "petite embarcation"@fr ,
+                          "small boat"@en .
+
+
+###  http://data/frontlet/thesaurus#socialNetwork
+:socialNetwork rdf:type owl:NamedIndividual ,
+                        :MediaType ;
+               skos:broader :mediaType ;
+               skos:prefLabel "réseaux sociaux"@fr ,
+                              "social network"@en .
+
+
+###  http://data/frontlet/thesaurus#starvedThirsty
+:starvedThirsty rdf:type owl:NamedIndividual ,
+                         :DeathCause ;
+                skos:broader :deathCause ;
+                skos:prefLabel "mort de faim ou de soif"@fr ,
+                               "starved or thirsty"@en .
+
+
+###  http://data/frontlet/thesaurus#stoaway
+:stoaway rdf:type owl:NamedIndividual ,
+                  :OrganizationMode ;
+         skos:broader :organizationMode ;
+         skos:prefLabel "passeurs"@fr ,
+                        "stoaway"@en .
+
+
+###  http://data/frontlet/thesaurus#structure
+:structure rdf:type owl:NamedIndividual ,
+                    :Structure ;
+           skos:prefLabel "structure"@en ,
+                          "structure"@fr .
+
+
+###  http://data/frontlet/thesaurus#suicide
+:suicide rdf:type owl:NamedIndividual ,
+                  :DeathNature ;
+         skos:broader :deathNature ;
+         skos:prefLabel "suicide"@en ,
+                        "suicide"@fr .
+
+
+###  http://data/frontlet/thesaurus#swimming
+:swimming rdf:type owl:NamedIndividual ,
+                   :TransportationMode ;
+          skos:broader :human ;
+          skos:prefLabel "nage"@fr ,
+                         "swimming"@en .
+
+
+###  http://data/frontlet/thesaurus#teenager
+:teenager rdf:type owl:NamedIndividual ,
+                   :AgeCategory ;
+          skos:broader :ageCategory ;
+          skos:definition "12 ans à 17 ans"@fr ;
+          skos:prefLabel "adolescent"@fr ,
+                         "teenager"@en .
+
+
+###  http://data/frontlet/thesaurus#television
+:television rdf:type owl:NamedIndividual ,
+                     :MediaType ;
+            skos:broader :mediaType ;
+            skos:prefLabel "television"@en ,
+                           "télévision"@fr .
+
+
+###  http://data/frontlet/thesaurus#traffic
+:traffic rdf:type owl:NamedIndividual ,
+                  :OrganizationMode ;
+         skos:broader :organizationMode ;
+         skos:prefLabel "traffic"@en ,
+                        "traffique"@fr .
+
+
+###  http://data/frontlet/thesaurus#train
+:train rdf:type owl:NamedIndividual ,
+                :TransportationMode ;
+       skos:broader :rail ;
+       skos:prefLabel "train"@en ,
+                      "train"@fr .
+
+
+###  http://data/frontlet/thesaurus#trainCrash
+:trainCrash rdf:type owl:NamedIndividual ,
+                     :DeathCause ;
+            skos:broader :transportCrash ;
+            skos:prefLabel "accident de train"@fr ,
+                           "train crash"@en .
+
+
+###  http://data/frontlet/thesaurus#transportCrash
+:transportCrash rdf:type owl:NamedIndividual ,
+                         :DeathCause ;
+                skos:broader :deathCause ;
+                skos:prefLabel "accident de transport"@fr ,
+                               "transport crash"@en .
+
+
+###  http://data/frontlet/thesaurus#transportationMode
+:transportationMode rdf:type owl:NamedIndividual ,
+                             :TransportationMode ;
+                    skos:definition "Définit le mode de transport utilisé par la victime" ;
+                    skos:prefLabel "mode de transport"@fr ,
+                                   "transportation mode"@en .
+
+
+###  http://data/frontlet/thesaurus#transportationMode_other
+:transportationMode_other rdf:type owl:NamedIndividual ,
+                                   :TransportationMode ;
+                          skos:broader :transportationMode ;
+                          skos:prefLabel "autre"@fr ,
+                                         "other"@en .
+
+
+###  http://data/frontlet/thesaurus#truck
+:truck rdf:type owl:NamedIndividual ,
+                :TransportationMode ;
+       skos:broader :road ;
+       skos:prefLabel "camion"@fr ,
+                      "truck"@en .
+
+
+###  http://data/frontlet/thesaurus#truckCrash
+:truckCrash rdf:type owl:NamedIndividual ,
+                     :DeathCause ;
+            skos:broader :transportCrash ;
+            skos:prefLabel "accident de camion"@fr ,
+                           "truck crash"@en .
+
+
+###  http://data/frontlet/thesaurus#typeOfInvolvment
+:typeOfInvolvment rdf:type owl:NamedIndividual ,
+                           :InvolvementType ;
+                  skos:definition "Définit la nature associée à l’implication d’un service"@fr ;
+                  skos:prefLabel "type de l'implication"@fr ,
+                                 "type of involvment"@en .
+
+
+###  http://data/frontlet/thesaurus#typeOfInvolvment_homicide
+:typeOfInvolvment_homicide rdf:type owl:NamedIndividual ,
+                                    :InvolvementType ;
+                           skos:broader :typeOfInvolvment ;
+                           skos:prefLabel "homicide"@en ,
+                                          "homicide"@fr .
+
+
+###  http://data/frontlet/thesaurus#typeOfInvolvment_violence
+:typeOfInvolvment_violence rdf:type owl:NamedIndividual ,
+                                    :InvolvementType ;
+                           skos:broader :typeOfInvolvment ;
+                           skos:prefLabel "violence"@en ,
+                                          "violence"@fr .
+
+
+###  http://data/frontlet/thesaurus#victimState
+:victimState rdf:type owl:NamedIndividual ,
+                      :VictimState ;
+             skos:definition "Définit l'état de la victime"@fr ;
+             skos:prefLabel "victim state"@en ,
+                            "état de la victime"@fr .
+
+
+###  http://data/frontlet/thesaurus#victimState_injured
+:victimState_injured rdf:type owl:NamedIndividual ,
+                              :VictimState ;
+                     skos:broader :victimState ;
+                     skos:prefLabel "blessé"@fr ,
+                                    "injured"@en .
+
+
+###  http://data/frontlet/thesaurus#victimState_missing
+:victimState_missing rdf:type owl:NamedIndividual ,
+                              :VictimState ;
+                     skos:broader :victimState ;
+                     skos:prefLabel "disparu"@fr ,
+                                    "missing"@en .
+
+
+###  http://data/frontlet/thesaurus#victimState_other
+:victimState_other rdf:type owl:NamedIndividual ,
+                            :VictimState ;
+                   skos:broader :victimState ;
+                   skos:prefLabel "autre"@fr ,
+                                  "other"@en .
+
+
+###  http://data/frontlet/thesaurus#walk
+:walk rdf:type owl:NamedIndividual ,
+               :TransportationMode ;
+      skos:broader :human ;
+      skos:prefLabel "marche"@fr ,
+                     "walk"@en .
+
+
+###  http://data/frontlet/thesaurus#weapon
+:weapon rdf:type owl:NamedIndividual ,
+                 :DeathCause ;
+        skos:broader :deathCause ;
+        skos:prefLabel "arme"@fr ,
+                       "weapon"@en .
+
+
+###  http://data/frontlet/thesaurus#youngAdult
+:youngAdult rdf:type owl:NamedIndividual ,
+                     :AgeCategory ;
+            skos:definition "18 ans à 29 ans"@fr ;
+            skos:prefLabel "jeune adulte"@fr ,
+                           "young adult"@en .
+
+
+###  Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi

@@ -17,7 +17,7 @@
 #################################################################
 
 ###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence#group
-:group rdf:type owl:ObjectProperty .
+:group rdf:type owl:ObjectProperty ;
       rdfs:domain :IndividualEvent ;
       rdfs:range :CollectiveEvent ;
         <http://www.w3.org/2004/02/skos/core#prefLabel> "group"@en ,

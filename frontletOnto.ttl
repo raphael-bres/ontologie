@@ -16,6 +16,14 @@
 #    Object Properties
 #################################################################
 
+###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence#group
+:group rdf:type owl:ObjectProperty .
+      rdfs:domain :IndividualEvent ;
+      rdfs:range :CollectiveEvent ;
+        <http://www.w3.org/2004/02/skos/core#prefLabel> "group"@en ,
+                                                        "groupe"@fr .
+
+                                                        
 ###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence/aged
 :aged rdf:type owl:ObjectProperty ;
       rdfs:domain :Person ;
@@ -42,15 +50,14 @@
 
 ###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence/composedOf
 :composedOf rdf:type owl:ObjectProperty ;
-            rdfs:domain :Trajectory ;
-            rdfs:range :Event ;
+            rdfs:domain :Person ;
+            rdfs:range :IndividualEvent ;
             <http://www.w3.org/2004/02/skos/core#prefLabel> "composed of"@en ,
                                                             "composé de"@fr .
 
 
 ###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence/hasAgeInterval
 :hasAgeInterval rdf:type owl:ObjectProperty ;
-                rdfs:domain :AgeClass ;
                 rdfs:range frontletVocab:AgeCategory ;
                 <http://www.w3.org/2004/02/skos/core#prefLabel> "a un intervalle d'âge"@fr ,
                                                                 "has age interval"@en .
@@ -88,17 +95,9 @@
                                                            "type de média"@fr .
 
 
-###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence/realizes
-:realizes rdf:type owl:ObjectProperty ;
-          rdfs:domain :Person ;
-          rdfs:range :Trajectory ;
-          <http://www.w3.org/2004/02/skos/core#prefLabel> "realizes"@en ,
-                                                          "réalise"@fr .
-
-
 ###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence/sourcedBy
 :sourcedBy rdf:type owl:ObjectProperty ;
-           rdfs:domain :Event ;
+           rdfs:domain :IndividualEvent ;
            rdfs:range :Source ;
            <http://www.w3.org/2004/02/skos/core#prefLabel> "sourced by"@en ,
                                                            "sourcé par"@fr .
@@ -106,7 +105,7 @@
 
 ###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence/startCountry
 :startCountry rdf:type owl:ObjectProperty ;
-              rdfs:domain :Event ;
+              rdfs:domain :IndividualEvent ;
               rdfs:range :Country ;
               <http://www.w3.org/2004/02/skos/core#prefLabel> "pays de départ"@fr ,
                                                               "start country"@en .
@@ -114,7 +113,7 @@
 
 ###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence/targetCountry
 :targetCountry rdf:type owl:ObjectProperty ;
-               rdfs:domain :Event ;
+               rdfs:domain :IndividualEvent ;
                rdfs:range :Country ;
                <http://www.w3.org/2004/02/skos/core#prefLabel> "pays cible"@fr ,
                                                                "target country"@en .
@@ -163,7 +162,7 @@
 ###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence/hasComment
 :hasComment rdf:type owl:DatatypeProperty ;
             rdfs:domain [ rdf:type owl:Class ;
-                          owl:unionOf ( :Event
+                          owl:unionOf ( :IndividualEvent
                                         :Source
                                       )
                         ] ;
@@ -239,7 +238,7 @@
 
 ###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence/policeIntervention
 :policeIntervention rdf:type owl:DatatypeProperty ;
-                    rdfs:domain :Violence ;
+                    rdfs:domain :DeathInjury ;
                     rdfs:range xsd:boolean ;
                     <http://www.w3.org/2004/02/skos/core#prefLabel> "intervention des forces de l'ordre"@fr ,
                                                                     "police intervention"@en .
@@ -261,10 +260,6 @@ frontletVocab:AgeCategory rdf:type owl:Class ;
                                                      "Age"@fr .
 
 
-###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence/AgeClass
-:AgeClass rdf:type owl:Class .
-
-
 ###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence/AgeEntity
 :AgeEntity rdf:type owl:Class ;
            <http://www.w3.org/2004/02/skos/core#prefLabel> "Age entity"@en ,
@@ -280,7 +275,7 @@ frontletVocab:AgeCategory rdf:type owl:Class ;
 
 ###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence/Call
 :Call rdf:type owl:Class ;
-      rdfs:subClassOf :Event ;
+      rdfs:subClassOf :IndividualEvent ;
       <http://www.w3.org/2004/02/skos/core#prefLabel> "Appel"@fr ,
                                                       "Call"@en .
 
@@ -292,52 +287,68 @@ frontletVocab:AgeCategory rdf:type owl:Class ;
                                                               "Sociétée civile"@fr .
 
 
+###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence/CollectiveEvent
+:CollectiveEvent rdf:type owl:Class ;
+                 rdfs:subClassOf <http://www.opengis.net/ont/geosparql#Feature> ,
+                                 :Event ;
+                 <http://www.w3.org/2004/02/skos/core#prefLabel> "Collective event"@en ,
+                                                                 "Evènement collectif"@fr .
+
+
 ###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence/Control
 :Control rdf:type owl:Class ;
-         rdfs:subClassOf :Event ;
+         rdfs:subClassOf :IndividualEvent ;
          <http://www.w3.org/2004/02/skos/core#prefLabel> "Control"@en ,
                                                          "Contrôle"@fr .
 
 
 ###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence/Conversation
 :Conversation rdf:type owl:Class ;
-              rdfs:subClassOf :Event ;
+              rdfs:subClassOf :IndividualEvent ;
               <http://www.w3.org/2004/02/skos/core#prefLabel> "Conversation"@en ,
                                                               "Conversation"@fr .
 
 
 ###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence/CorpseAnalysis
 :CorpseAnalysis rdf:type owl:Class ;
-                rdfs:subClassOf :Event ;
+                rdfs:subClassOf :IndividualEvent ;
                 <http://www.w3.org/2004/02/skos/core#prefLabel> "Analyse du corps"@fr ,
                                                                 "Corpse analysis"@en .
 
 
 ###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence/CorpseRepatriation
 :CorpseRepatriation rdf:type owl:Class ;
-                    rdfs:subClassOf :Event ;
+                    rdfs:subClassOf :IndividualEvent ;
                     <http://www.w3.org/2004/02/skos/core#prefLabel> "Corpse repatriation"@en ,
                                                                     "Rapatriement du corps"@fr .
 
 
 ###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence/Country
 :Country rdf:type owl:Class ;
+         rdfs:subClassOf <http://www.opengis.net/ont/geosparql#Feature> ;
          <http://www.w3.org/2004/02/skos/core#prefLabel> "Country"@en ,
                                                          "Pays"@fr .
 
 
 ###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence/Death
 :Death rdf:type owl:Class ;
-       rdfs:subClassOf :Violence ;
+       rdfs:subClassOf :DeathInjury ;
        <http://www.w3.org/2004/02/skos/core#prefLabel> "Death"@en ,
                                                        "Mort"@fr .
 
 
 ###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence/DeathCertificate
 :DeathCertificate rdf:type owl:Class ;
-                  rdfs:subClassOf :OfficialSource ;
+                  rdfs:subClassOf :OfficialDocument ;
                   <http://www.w3.org/2004/02/skos/core#prefLabel> "Certificat de décès"@fr ,
                                                                   "Death certificate"@en .
+
+
+###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence/DeathInjury
+:DeathInjury rdf:type owl:Class ;
+             rdfs:subClassOf :IndividualEvent ;
+             <http://www.w3.org/2004/02/skos/core#prefLabel> "Death injury"@en ,
+                                                             "Mort blessure"@fr .
 
 
 ###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence/Event
@@ -353,16 +364,24 @@ frontletVocab:AgeCategory rdf:type owl:Class ;
                                                         "Family"@en .
 
 
+###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence/IndividualEvent
+:IndividualEvent rdf:type owl:Class ;
+                 rdfs:subClassOf <http://www.opengis.net/ont/geosparql#Feature> ,
+                                 :Event ;
+                 <http://www.w3.org/2004/02/skos/core#prefLabel> "Evènement individuel"@fr ,
+                                                                 "Individual Event"@en .
+
+
 ###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence/Inhumation
 :Inhumation rdf:type owl:Class ;
-            rdfs:subClassOf :Event ;
+            rdfs:subClassOf :IndividualEvent ;
             <http://www.w3.org/2004/02/skos/core#prefLabel> "Inhumation"@en ,
                                                             "Inhumation"@fr .
 
 
 ###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence/Injury
 :Injury rdf:type owl:Class ;
-        rdfs:subClassOf :Violence ;
+        rdfs:subClassOf :DeathInjury ;
         <http://www.w3.org/2004/02/skos/core#prefLabel> "Blessure"@fr ,
                                                         "Injury"@en .
 
@@ -374,16 +393,16 @@ frontletVocab:AgeCategory rdf:type owl:Class ;
                                                        "Media"@fr .
 
 
-###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence/OfficialSource
-:OfficialSource rdf:type owl:Class ;
-                rdfs:subClassOf :Source ;
-                <http://www.w3.org/2004/02/skos/core#prefLabel> "Official source"@en ,
-                                                                "Source officielle"@fr .
+###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence/OfficialDocument
+:OfficialDocument rdf:type owl:Class ;
+                  rdfs:subClassOf :Source ;
+                  <http://www.w3.org/2004/02/skos/core#prefLabel> "Document officiel"@fr ,
+                                                                  "Official document"@en .
 
 
 ###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence/OtherOfficialDocument
 :OtherOfficialDocument rdf:type owl:Class ;
-                       rdfs:subClassOf :OfficialSource ;
+                       rdfs:subClassOf :OfficialDocument ;
                        <http://www.w3.org/2004/02/skos/core#prefLabel> "Autre document officiel"@fr ,
                                                                        "Other offical document"@en .
 
@@ -402,29 +421,16 @@ frontletVocab:AgeCategory rdf:type owl:Class ;
 
 ###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence/Testimony
 :Testimony rdf:type owl:Class ;
-           rdfs:subClassOf :Event ;
+           rdfs:subClassOf :IndividualEvent ;
            <http://www.w3.org/2004/02/skos/core#prefLabel> "Testimony"@en ,
                                                            "Témoignage"@fr .
 
 
 ###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence/Trace
 :Trace rdf:type owl:Class ;
-       rdfs:subClassOf :Event ;
+       rdfs:subClassOf :IndividualEvent ;
        <http://www.w3.org/2004/02/skos/core#prefLabel> "Trace"@en ,
                                                        "Trace"@fr .
-
-
-###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence/Trajectory
-:Trajectory rdf:type owl:Class ;
-            <http://www.w3.org/2004/02/skos/core#prefLabel> "Trajectoire"@fr ,
-                                                            "Trajectory"@en .
-
-
-###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence/Violence
-:Violence rdf:type owl:Class ;
-          rdfs:subClassOf :Event ;
-          <http://www.w3.org/2004/02/skos/core#prefLabel> "Violence"@en ,
-                                                          "Violence"@fr .
 
 
 #################################################################

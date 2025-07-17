@@ -282,8 +282,8 @@
                             "nature de la mort"@fr .
 
 
-###  http://data/frontlet/thesaurus#deathNature_homicide
-:deathNature_homicide rdf:type owl:NamedIndividual ,
+###  http://data/frontlet/thesaurus#homicide
+:homicide rdf:type owl:NamedIndividual ,
                                :DeathNature ;
                       skos:broader :deathNature ;
                       skos:prefLabel "homicide"@en ,
@@ -329,16 +329,8 @@
                                 "raison de l'exclusion"@fr .
 
 
-###  http://data/frontlet/thesaurus#exclusionReason_injured
-:exclusionReason_injured rdf:type owl:NamedIndividual ,
-                                  :ExclusionReason ;
-                         skos:broader :exclusionReason ;
-                         skos:prefLabel "blessé"@fr ,
-                                        "injured"@en .
-
-
-###  http://data/frontlet/thesaurus#exclusionReason_missing
-:exclusionReason_missing rdf:type owl:NamedIndividual ,
+###  http://data/frontlet/thesaurus#missing
+:missing rdf:type owl:NamedIndividual ,
                                   :ExclusionReason ;
                          skos:broader :exclusionReason ;
                          skos:prefLabel "disparu"@fr ,
@@ -418,16 +410,16 @@
                        "genre"@fr .
 
 
-###  http://data/frontlet/thesaurus#gender_female
-:gender_female rdf:type owl:NamedIndividual ,
+###  http://data/frontlet/thesaurus#female
+:female rdf:type owl:NamedIndividual ,
                         :Gender ;
                skos:broader :gender ;
                skos:prefLabel "female"@en ,
                               "féminin"@fr .
 
 
-###  http://data/frontlet/thesaurus#gender_male
-:gender_male rdf:type owl:NamedIndividual ,
+###  http://data/frontlet/thesaurus#male
+:male rdf:type owl:NamedIndividual ,
                       :Gender ;
              skos:broader :gender ;
              skos:prefLabel "male"@en ,
@@ -510,8 +502,22 @@
 :hospitalClinic rdf:type owl:NamedIndividual ,
                          :Structure ;
                 skos:broader :structure ;
-                skos:prefLabel "hospital/clinic"@en ,
-                               "hôpital/clinique"@fr .
+                skos:prefLabel "hospital or clinic"@en ,
+                               "hôpital ou clinique"@fr .
+
+###  http://data/frontlet/thesaurus#hospital
+:hospital rdf:type owl:NamedIndividual ,
+                         :Structure ;
+                skos:broader :hospitalClinic ;
+                skos:prefLabel "hospital"@en ,
+                               "hôpital"@fr .
+
+###  http://data/frontlet/thesaurus#clinic
+:clinic rdf:type owl:NamedIndividual ,
+                         :Structure ;
+                skos:broader :hospitalClinic ;
+                skos:prefLabel "clinic"@en ,
+                               "clinique"@fr .                               
 
 
 ###  http://data/frontlet/thesaurus#human
@@ -547,11 +553,19 @@
                        "nourisson"@fr .
 
 
+###  http://data/frontlet/thesaurus#injured
+:injured rdf:type owl:NamedIndividual ,
+                  :ExclusionReason ;
+         skos:broader :exclusionReason ;
+         skos:prefLabel "blessé"@fr ,
+                        "injured"@en .
+
+
 ###  http://data/frontlet/thesaurus#institution
 :institution rdf:type owl:NamedIndividual ,
                       :Service ;
              skos:prefLabel "institution"@en ,
-                            "service"@fr .
+                            "institution"@fr .
 
 
 ###  http://data/frontlet/thesaurus#lackOfInformation
@@ -794,12 +808,12 @@
                                "starved or thirsty"@en .
 
 
-###  http://data/frontlet/thesaurus#stoaway
-:stoaway rdf:type owl:NamedIndividual ,
+###  http://data/frontlet/thesaurus#smuggler
+:smuggler rdf:type owl:NamedIndividual ,
                   :OrganizationMode ;
          skos:broader :organizationMode ;
          skos:prefLabel "passeurs"@fr ,
-                        "stoaway"@en .
+                        "smuggler"@en .
 
 
 ###  http://data/frontlet/thesaurus#structure
@@ -847,7 +861,7 @@
                   :OrganizationMode ;
          skos:broader :organizationMode ;
          skos:prefLabel "traffic"@en ,
-                        "traffique"@fr .
+                        "traffic"@fr .
 
 
 ###  http://data/frontlet/thesaurus#train
@@ -914,16 +928,16 @@
                                  "type of involvment"@en .
 
 
-###  http://data/frontlet/thesaurus#typeOfInvolvment_homicide
-:typeOfInvolvment_homicide rdf:type owl:NamedIndividual ,
+###  http://data/frontlet/thesaurus#homicide
+:homicide rdf:type owl:NamedIndividual ,
                                     :InvolvementType ;
                            skos:broader :typeOfInvolvment ;
                            skos:prefLabel "homicide"@en ,
                                           "homicide"@fr .
 
 
-###  http://data/frontlet/thesaurus#typeOfInvolvment_violence
-:typeOfInvolvment_violence rdf:type owl:NamedIndividual ,
+###  http://data/frontlet/thesaurus#violence
+:violence rdf:type owl:NamedIndividual ,
                                     :InvolvementType ;
                            skos:broader :typeOfInvolvment ;
                            skos:prefLabel "violence"@en ,
@@ -938,16 +952,16 @@
                             "état de la victime"@fr .
 
 
-###  http://data/frontlet/thesaurus#victimState_injured
-:victimState_injured rdf:type owl:NamedIndividual ,
+###  http://data/frontlet/thesaurus#injured
+:injured rdf:type owl:NamedIndividual ,
                               :VictimState ;
                      skos:broader :victimState ;
                      skos:prefLabel "blessé"@fr ,
                                     "injured"@en .
 
 
-###  http://data/frontlet/thesaurus#victimState_missing
-:victimState_missing rdf:type owl:NamedIndividual ,
+###  http://data/frontlet/thesaurus#missing
+:missing rdf:type owl:NamedIndividual ,
                               :VictimState ;
                      skos:broader :victimState ;
                      skos:prefLabel "disparu"@fr ,

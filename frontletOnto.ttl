@@ -1,15 +1,15 @@
-@prefix : <http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence/> .
+@prefix : <http://purl.org/frontierelethale/onto/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix frontletVocab: <http://data/frontlet/thesaurus#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@base <http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence/> .
+@prefix frontletVocab: <http://purl.org/frontierelethale/onto/> .
+@base <http://purl.org/frontierelethale/onto/> .
 
-<http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence> rdf:type owl:Ontology ;
-                                                                         owl:imports <http://data/frontlet/thesaurus/1.0> ,
+<http://purl.org/frontierelethale/onto> rdf:type owl:Ontology ;
+                                                                         owl:imports <http://purl.org/frontierelethale/onto> ,
                                                                                      <http://www.opengis.net/ont/geosparql/1.1> ,
                                                                                      <http://www.w3.org/2006/time#2016> .
 
@@ -17,150 +17,176 @@
 #    Object Properties
 #################################################################
 
-###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence/aged
+###  http://purl.org/frontierelethale/onto/aged
 :aged rdf:type owl:ObjectProperty ;
       rdfs:domain :Person ;
       rdfs:range :Age ;
+      skos:definition "Defines a migrant age"@en ,
+                      "Défini l'âge d'un migrant"@fr ;
       skos:prefLabel "aged"@en ,
-                                                      "agé de"@fr .
+                     "agé de"@fr .
 
 
-###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence/birthPlace
+###  http://purl.org/frontierelethale/onto/birthPlace
 :birthPlace rdf:type owl:ObjectProperty ;
             rdfs:domain :Person ;
             rdfs:range :Country ;
+            skos:definition "Defines a migrant birth country"@en ,
+                            "Défini le pays de naissance d'un migrant"@fr ;
             skos:prefLabel "birth place"@en ,
-                                                            "lieu de naissance"@fr .
+                           "lieu de naissance"@fr .
 
 
-###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence/certificate
+###  http://purl.org/frontierelethale/onto/certificate
 :certificate rdf:type owl:ObjectProperty ;
              rdfs:domain :Death ;
              rdfs:range :DeathCertificate ;
+             skos:definition "Lie un certificat de mort à un évènement"@fr ,
+                             "Links a death certificate to an event"@en ;
              skos:prefLabel "certificat"@fr ,
-                                                             "certificate"@en .
+                            "certificate"@en .
 
 
-###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence/composedOf
+###  http://purl.org/frontierelethale/onto/composedOf
 :composedOf rdf:type owl:ObjectProperty ;
             rdfs:domain :Person ;
             rdfs:range :IndividualEvent ;
-            skos:prefLabel "composed of"@en ,
-                                                            "composé de"@fr .
+            skos:definition "The migrant lives one or more events during his route"@en ,
+                            "Un migrant vis un ou plusieurs évènements durant son trajet"@fr ;
+            skos:prefLabel "live"@en ,
+                           "vis"@fr .
 
 
-###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence/group
+###  http://purl.org/frontierelethale/onto/group
 :group rdf:type owl:ObjectProperty ;
        rdfs:domain :IndividualEvent ;
        rdfs:range :CollectiveEvent ;
+       skos:definition "Plusieurs évènements individuels sont groupés dans un évènement collectif"@fr ,
+                       "Several individual events are grouped in one collective event"@en ;
        skos:prefLabel "group"@en ,
-                                                       "groupe"@fr .
+                      "groupe"@fr .
 
 
-###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence/hasAgeInterval
+###  http://purl.org/frontierelethale/onto/hasAgeInterval
 :hasAgeInterval rdf:type owl:ObjectProperty ;
                 rdfs:range frontletVocab:AgeCategory ;
+                skos:definition "Defines an age interval for a migrant when the information is not precise"@en ,
+                                "Défini un intervalle d'âge pour un migrant lorsque l'information précise n'est pas communiquée"@fr ;
                 skos:prefLabel "a un intervalle d'âge"@fr ,
-                                                                "has age interval"@en .
+                               "has age interval"@en .
 
 
-###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence/hasDeathCause
+###  http://purl.org/frontierelethale/onto/hasDeathCause
 :hasDeathCause rdf:type owl:ObjectProperty ;
                rdfs:domain :Death ;
                rdfs:range frontletVocab:DeathCause ;
+               skos:definition "Defines a migrant death cause"@en ,
+                               "Défini la cause de mort d'un migrant"@fr ;
                skos:prefLabel "a une cause de mort"@fr ,
-                                                               "has death cause"@en .
+                              "has death cause"@en .
 
 
-###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence/hasDeathNature
+###  http://purl.org/frontierelethale/onto/hasDeathNature
 :hasDeathNature rdf:type owl:ObjectProperty ;
                 rdfs:domain :Death ;
                 rdfs:range frontletVocab:DeathNature ;
+                skos:definition "Defines a migrant death nature"@en ,
+                                "Défini la nature de la mort d'un migrant"@fr ;
                 skos:prefLabel "a une nature de mort"@fr ,
-                                                                "has death nature"@en .
+                               "has death nature"@en .
 
 
-###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence/hasGender
+###  http://purl.org/frontierelethale/onto/hasGender
 :hasGender rdf:type owl:ObjectProperty ;
            rdfs:domain :Person ;
            rdfs:range frontletVocab:Gender ;
+           skos:definition "Defines a migrant gender"@en ,
+                           "Défini le genre d'un migrant"@fr ;
            skos:prefLabel "a un genre"@fr ,
-                                                           "has gender"@en .
+                          "has gender"@en .
 
 
-###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence/mediaType
+###  http://purl.org/frontierelethale/onto/mediaType
 :mediaType rdf:type owl:ObjectProperty ;
            rdfs:domain :Media ;
            rdfs:range frontletVocab:MediaType ;
+           skos:definition "Media type bringing elements about an event"@en ,
+                           "Type de média apportant des éléments sur un évènement"@fr ;
            skos:prefLabel "media type"@en ,
-                                                           "type de média"@fr .
+                          "type de média"@fr .
 
 
-###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence/sourcedBy
+###  http://purl.org/frontierelethale/onto/sourcedBy
 :sourcedBy rdf:type owl:ObjectProperty ;
            rdfs:domain :IndividualEvent ;
            rdfs:range :Source ;
+           skos:definition "An element attesting the veracity of an event"@en ,
+                           "Un élément attestant de la véracité d'un évènement"@fr ;
            skos:prefLabel "sourced by"@en ,
-                                                           "sourcé par"@fr .
+                          "sourcé par"@fr .
 
 
-###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence/startCountry
+###  http://purl.org/frontierelethale/onto/startCountry
 :startCountry rdf:type owl:ObjectProperty ;
               rdfs:domain :IndividualEvent ;
               rdfs:range :Country ;
+              skos:definition "Country where a migrant begins a border crossing"@en ,
+                              "Pays dans lequel un migrant commence un franchissement de frontière"@fr ;
               skos:prefLabel "pays de départ"@fr ,
-                                                              "start country"@en .
+                             "start country"@en .
 
 
-###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence/targetCountry
+###  http://purl.org/frontierelethale/onto/targetCountry
 :targetCountry rdf:type owl:ObjectProperty ;
                rdfs:domain :IndividualEvent ;
                rdfs:range :Country ;
+               skos:definition "Defines the country a migrant wanted to join during a border crossing"@en ,
+                               "Défini le pays que le migrant voulait rejoindre lors du franchissement d'une frontière"@fr ;
                skos:prefLabel "pays cible"@fr ,
-                                                               "target country"@en .
+                              "target country"@en .
 
 
 ###  http://www.w3.org/2004/02/skos/core#broader
-<http://www.w3.org/2004/02/skos/core#broader> rdf:type owl:ObjectProperty .
+skos:broader rdf:type owl:ObjectProperty .
 
 
 #################################################################
 #    Data properties
 #################################################################
 
-###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence/hasAge
+###  http://purl.org/frontierelethale/onto/hasAge
 :hasAge rdf:type owl:DatatypeProperty ;
         rdfs:domain :Age ;
         rdfs:range xsd:integer ;
         skos:prefLabel "a un âge"@fr ,
-                                                        "has age"@en .
+                       "has age"@en .
 
 
-###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence/hasAuthor
+###  http://purl.org/frontierelethale/onto/hasAuthor
 :hasAuthor rdf:type owl:DatatypeProperty ;
            rdfs:domain :Testimony ;
            rdfs:range xsd:string ;
            skos:prefLabel "a un auteur"@fr ,
-                                                           "has author"@en .
+                          "has author"@en .
 
 
-###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence/hasAuthority
+###  http://purl.org/frontierelethale/onto/hasAuthority
 :hasAuthority rdf:type owl:DatatypeProperty ;
               rdfs:domain :Control ;
               rdfs:range xsd:string ;
               skos:prefLabel "a une autorité impliquée"@fr ,
-                                                              "has an implicated authority"@en .
+                             "has an implicated authority"@en .
 
 
-###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence/hasCalledMember
+###  http://purl.org/frontierelethale/onto/hasCalledMember
 :hasCalledMember rdf:type owl:DatatypeProperty ;
                  rdfs:domain :Call ;
                  rdfs:range xsd:string ;
                  skos:prefLabel "a une personne appelée"@fr ,
-                                                                 "has called member"@en .
+                                "has called member"@en .
 
 
-###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence/hasComment
+###  http://purl.org/frontierelethale/onto/hasComment
 :hasComment rdf:type owl:DatatypeProperty ;
             rdfs:domain [ rdf:type owl:Class ;
                           owl:unionOf ( :IndividualEvent
@@ -169,80 +195,80 @@
                         ] ;
             rdfs:range xsd:string ;
             skos:prefLabel "a un commentaire"@fr ,
-                                                            "has comment"@en .
+                           "has comment"@en .
 
 
-###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence/hasFirstName
+###  http://purl.org/frontierelethale/onto/hasFirstName
 :hasFirstName rdf:type owl:DatatypeProperty ;
               rdfs:domain :Person ;
               rdfs:range xsd:string ;
               skos:prefLabel "a un prénom"@fr ,
-                                                              "has first name"@en .
+                             "has first name"@en .
 
 
-###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence/hasIdCertificate
+###  http://purl.org/frontierelethale/onto/hasIdCertificate
 :hasIdCertificate rdf:type owl:DatatypeProperty ;
                   rdfs:domain :DeathCertificate ;
                   rdfs:range xsd:string ;
                   skos:prefLabel "a un numéro de certificat de décès"@fr ,
-                                                                  "has a death certificate id"@en .
+                                 "has a death certificate id"@en .
 
 
-###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence/hasLastName
+###  http://purl.org/frontierelethale/onto/hasLastName
 :hasLastName rdf:type owl:DatatypeProperty ;
              rdfs:domain :Person ;
              rdfs:range xsd:string ;
              skos:prefLabel "a un nom de famille"@fr ,
-                                                             "has last name"@en .
+                            "has last name"@en .
 
 
-###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence/hasName
+###  http://purl.org/frontierelethale/onto/hasName
 :hasName rdf:type owl:DatatypeProperty ;
          rdfs:domain :Source ;
          rdfs:range xsd:string ;
          skos:prefLabel "a un nom"@fr ,
-                                                         "has name"@en .
+                        "has name"@en .
 
 
-###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence/hasPrecision
+###  http://purl.org/frontierelethale/onto/hasPrecision
 :hasPrecision rdf:type owl:DatatypeProperty ;
               rdfs:subPropertyOf owl:topDataProperty ;
               rdfs:domain :Age ;
               rdfs:range xsd:boolean ;
               skos:prefLabel "a une précision"@fr ,
-                                                              "has precision"@en .
+                             "has precision"@en .
 
 
-###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence/hasShape
+###  http://purl.org/frontierelethale/onto/hasShape
 :hasShape rdf:type owl:DatatypeProperty ;
           rdfs:domain :Trace ;
           rdfs:range xsd:string ;
           skos:prefLabel "a une trace"@fr ,
-                                                          "has trace"@en .
+                         "has trace"@en .
 
 
-###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence/hasType
+###  http://purl.org/frontierelethale/onto/hasType
 :hasType rdf:type owl:DatatypeProperty ;
          rdfs:domain :Injury ;
          rdfs:range xsd:string ;
          skos:prefLabel "a un type"@fr ,
-                                                         "has type"@en .
+                        "has type"@en .
 
 
-###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence/hasWebLink
+###  http://purl.org/frontierelethale/onto/hasWebLink
 :hasWebLink rdf:type owl:DatatypeProperty ;
             rdfs:domain :Source ;
             rdfs:range xsd:string ;
             skos:prefLabel "a un lien web"@fr ,
-                                                            "has web link"@en .
+                           "has web link"@en .
 
 
-###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence/policeIntervention
+###  http://purl.org/frontierelethale/onto/policeIntervention
 :policeIntervention rdf:type owl:DatatypeProperty ;
                     rdfs:domain :DeathInjury ;
                     rdfs:range xsd:boolean ;
                     skos:prefLabel "intervention des forces de l'ordre"@fr ,
-                                                                    "police intervention"@en .
+                                   "police intervention"@en .
 
 
 #################################################################
@@ -251,9 +277,9 @@
 
 ###  http://data/frontlet/thesaurus#AgeCategory
 frontletVocab:AgeCategory rdf:type owl:Class ;
-                          rdfs:subClassOf :AgeEntity ;
+                          rdfs:subClassOf :AgeInterval ;
                           skos:definition "Catégories d'âge génériques que l'on retrouve dans les récits de migrations lorsque l'on a pas l'information sur l'âge réel d'un migrant. Ces catégories représentent des intervalles prédéfinis."@fr ,
-                                                                           "General age categories found in migrations tales when the authors do not have the exact age of the migrant. These categories are predefined intervals."@en .
+                                          "General age categories found in migrations tales when the authors do not have the exact age of the migrant. These categories are predefined intervals."@en .
 
 
 ###  http://data/frontlet/thesaurus#DeathCause
@@ -272,235 +298,235 @@ frontletVocab:Gender skos:definition "Genre d'une personne"@fr .
 frontletVocab:MediaType skos:definition "Type de média servant de source au décès d'un migrant"@fr .
 
 
-###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence/Age
+###  http://purl.org/frontierelethale/onto/Age
 :Age rdf:type owl:Class ;
      rdfs:subClassOf :AgeEntity ;
      skos:definition "Precise value of a migrant age. It can be negative for a prenatal loss or real in case of a less than one year old child"@en ,
-                                                      "Valeur précise de l'âge d'un migrant. Il peut être négatif pour une perte prénatale ou à virgule dans le cas d'un enfant de moins d'un an" ;
+                     "Valeur précise de l'âge d'un migrant. Il peut être négatif pour une perte prénatale ou à virgule dans le cas d'un enfant de moins d'un an" ;
      skos:prefLabel "Age"@en ,
-                                                     "Age"@fr .
+                    "Age"@fr .
 
 
-###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence/AgeEntity
+###  http://purl.org/frontierelethale/onto/AgeEntity
 :AgeEntity rdf:type owl:Class ;
            skos:definition "Super class dealing with migrant age"@en ,
-                                                            "Super classe gérant l'âge d'un migrant"@fr ;
+                           "Super classe gérant l'âge d'un migrant"@fr ;
            skos:prefLabel "Age entity"@en ,
-                                                           "Entité âge"@fr .
+                          "Entité âge"@fr .
 
 
-###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence/AgeInterval
+###  http://purl.org/frontierelethale/onto/AgeInterval
 :AgeInterval rdf:type owl:Class ;
              rdfs:subClassOf :AgeEntity ;
              skos:definition "Age interval where the migrant age is"@en ,
-                                                              "Intervalle d'âge dans lequel un migrant se trouve"@fr ;
+                             "Intervalle d'âge dans lequel un migrant se trouve"@fr ;
              skos:prefLabel "Age interval"@en ,
-                                                             "Inervalle d'âge"@fr .
+                            "Inervalle d'âge"@fr .
 
 
-###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence/Call
+###  http://purl.org/frontierelethale/onto/Call
 :Call rdf:type owl:Class ;
       rdfs:subClassOf :IndividualEvent ;
       skos:definition "Ante mortem event consisting in a migrant calling a close person"@en ,
-                                                       "Evènement ante mortem consistant à un migrant ayant passé un appel téléphonique avec un proche"@fr ;
+                      "Evènement ante mortem consistant à un migrant ayant passé un appel téléphonique avec un proche"@fr ;
       skos:prefLabel "Appel"@fr ,
-                                                      "Call"@en .
+                     "Call"@en .
 
 
-###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence/CivilSociety
+###  http://purl.org/frontierelethale/onto/CivilSociety
 :CivilSociety rdf:type owl:Class ;
               rdfs:subClassOf :Source ;
               skos:definition "La source d'information vient d'un organisme type sociétée civile (ONG)"@fr ,
-                                                               "The information source comes from a civil society orgnism (NGO)"@en ;
+                              "The information source comes from a civil society orgnism (NGO)"@en ;
               skos:prefLabel "Civil society"@en ,
-                                                              "Sociétée civile"@fr .
+                             "Sociétée civile"@fr .
 
 
-###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence/CollectiveEvent
+###  http://purl.org/frontierelethale/onto/CollectiveEvent
 :CollectiveEvent rdf:type owl:Class ;
                  rdfs:subClassOf <http://www.opengis.net/ont/geosparql#Feature> ,
                                  :Event ;
                  skos:definition "An event potentially shared by mulitple migrants. Events can be slighlty different (a death and an injury)"@en ,
-                                                                  "Un évènement partagé par au moins deux migrants. Les évènements peuvent être légèrement différents (un décès et une blessure)."@fr ;
+                                 "Un évènement partagé par au moins deux migrants. Les évènements peuvent être légèrement différents (un décès et une blessure)."@fr ;
                  skos:prefLabel "Collective event"@en ,
-                                                                 "Evènement collectif"@fr .
+                                "Evènement collectif"@fr .
 
 
-###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence/Control
+###  http://purl.org/frontierelethale/onto/Control
 :Control rdf:type owl:Class ;
          rdfs:subClassOf :IndividualEvent ;
          skos:definition "Ante mortem event consisting in a police control or an NGO grouping migrant names with a date and a place"@en ,
-                                                          "Evènement ante mortem consistant à un contrôle de police ou d'une ONG regroupant le nom d'un migrant ainsi qu'un lieu et une date"@fr ;
+                         "Evènement ante mortem consistant à un contrôle de police ou d'une ONG regroupant le nom d'un migrant ainsi qu'un lieu et une date"@fr ;
          skos:prefLabel "Control"@en ,
-                                                         "Contrôle"@fr .
+                        "Contrôle"@fr .
 
 
-###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence/Conversation
+###  http://purl.org/frontierelethale/onto/Conversation
 :Conversation rdf:type owl:Class ;
               rdfs:subClassOf :IndividualEvent ;
               skos:definition "Ante mortem event where a migrant discussed with another person in a physical way"@en ,
-                                                               "Evènement ante mortem où un migrant a discuté avec une autre personne de manière physique"@fr ;
+                              "Evènement ante mortem où un migrant a discuté avec une autre personne de manière physique"@fr ;
               skos:prefLabel "Conversation"@en ,
-                                                              "Conversation"@fr .
+                             "Conversation"@fr .
 
 
-###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence/CorpseAnalysis
+###  http://purl.org/frontierelethale/onto/CorpseAnalysis
 :CorpseAnalysis rdf:type owl:Class ;
                 rdfs:subClassOf :IndividualEvent ;
                 skos:definition "Evènement post mortem consistant à analyser le corps d'un migrant décédé"@fr ,
-                                                                 "Post mortem event consisting in analyzing the corpse if a deceased migrant"@en ;
+                                "Post mortem event consisting in analyzing the corpse if a deceased migrant"@en ;
                 skos:prefLabel "Analyse du corps"@fr ,
-                                                                "Corpse analysis"@en .
+                               "Corpse analysis"@en .
 
 
-###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence/CorpseRepatriation
+###  http://purl.org/frontierelethale/onto/CorpseRepatriation
 :CorpseRepatriation rdf:type owl:Class ;
                     rdfs:subClassOf :IndividualEvent ;
                     skos:definition "Evènement post mortem consistant au rapatriement du corps d'un migrant décédé dans son pays d'origine."@fr ,
-                                                                     "Post mortem event consisting in rapatriating a dead migran corpse"@en ;
+                                    "Post mortem event consisting in rapatriating a dead migran corpse"@en ;
                     skos:prefLabel "Corpse repatriation"@en ,
-                                                                    "Rapatriement du corps"@fr .
+                                   "Rapatriement du corps"@fr .
 
 
-###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence/Country
+###  http://purl.org/frontierelethale/onto/Country
 :Country rdf:type owl:Class ;
          rdfs:subClassOf <http://www.opengis.net/ont/geosparql#Feature> ;
          skos:definition "Pays de naissance d'un migrant ou pays traversé lors d'une migration"@fr ;
          skos:prefLabel "Country"@en ,
-                                                         "Pays"@fr .
+                        "Pays"@fr .
 
 
-###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence/Death
+###  http://purl.org/frontierelethale/onto/Death
 :Death rdf:type owl:Class ;
        rdfs:subClassOf :DeathInjury ;
        skos:definition "Event consisting in the death of a migrant crossing a border"@en ,
-                                                        "Evènement consistant à la mort d'un migrant dans le cadre du franchissement d'une frontière."@fr ;
+                       "Evènement consistant à la mort d'un migrant dans le cadre du franchissement d'une frontière."@fr ;
        skos:prefLabel "Death"@en ,
-                                                       "Mort"@fr .
+                      "Mort"@fr .
 
 
-###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence/DeathCertificate
+###  http://purl.org/frontierelethale/onto/DeathCertificate
 :DeathCertificate rdf:type owl:Class ;
                   rdfs:subClassOf :OfficialDocument ;
                   skos:definition "Certificat de décès d'un migrant"@fr ,
-                                                                   "Death certificate of a migrant"@en ;
+                                  "Death certificate of a migrant"@en ;
                   skos:prefLabel "Certificat de décès"@fr ,
-                                                                  "Death certificate"@en .
+                                 "Death certificate"@en .
 
 
-###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence/DeathInjury
+###  http://purl.org/frontierelethale/onto/DeathInjury
 :DeathInjury rdf:type owl:Class ;
              rdfs:subClassOf :IndividualEvent ;
              skos:definition "Event consisting in the death or the injury of a migrant crossing a border"@en ,
-                                                              "Evènement consistant à la blessure ou la mort d'un migrant lors du passage d'une frontière."@fr ;
+                             "Evènement consistant à la blessure ou la mort d'un migrant lors du passage d'une frontière."@fr ;
              skos:prefLabel "Death injury"@en ,
-                                                             "Mort blessure"@fr .
+                            "Mort blessure"@fr .
 
 
-###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence/Event
+###  http://purl.org/frontierelethale/onto/Event
 :Event rdf:type owl:Class ;
        skos:definition "A life moment of a migrant during its journey"@en ,
-                                                        "Un moment de la vie d'un migrant durant son trajet."@fr ;
+                       "Un moment de la vie d'un migrant durant son trajet."@fr ;
        skos:prefLabel "Event"@en ,
-                                                       "Evènement"@fr .
+                      "Evènement"@fr .
 
 
-###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence/Family
+###  http://purl.org/frontierelethale/onto/Family
 :Family rdf:type owl:Class ;
         rdfs:subClassOf :Source ;
         skos:definition "La source d'une information vient d'un membre de la famille ou d'un proche d'un migrant"@fr ,
-                                                         "The source information comes from a family member or a migrant close person"@en ;
+                        "The source information comes from a family member or a migrant close person"@en ;
         skos:prefLabel "Famille"@fr ,
-                                                        "Family"@en .
+                       "Family"@en .
 
 
-###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence/IndividualEvent
+###  http://purl.org/frontierelethale/onto/IndividualEvent
 :IndividualEvent rdf:type owl:Class ;
                  rdfs:subClassOf <http://www.opengis.net/ont/geosparql#Feature> ,
                                  :Event ;
                  skos:definition "Evènement dans la trajectoire de migration d'un migrant"@fr ,
-                                                                  "Individual event in the journey of a migrant"@en ;
+                                 "Individual event in the journey of a migrant"@en ;
                  skos:prefLabel "Evènement individuel"@fr ,
-                                                                 "Individual Event"@en .
+                                "Individual Event"@en .
 
 
-###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence/Inhumation
+###  http://purl.org/frontierelethale/onto/Inhumation
 :Inhumation rdf:type owl:Class ;
             rdfs:subClassOf :IndividualEvent ;
             skos:definition "Evènement post mortem consistant à la cérémonie d'inhumation du corps d'un migrant décédé."@fr ,
-                                                             "Post mortem event consisting in the inhumation ceremony of a deceased migrant corpse"@en ;
+                            "Post mortem event consisting in the inhumation ceremony of a deceased migrant corpse"@en ;
             skos:prefLabel "Inhumation"@en ,
-                                                            "Inhumation"@fr .
+                           "Inhumation"@fr .
 
 
-###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence/Injury
+###  http://purl.org/frontierelethale/onto/Injury
 :Injury rdf:type owl:Class ;
         rdfs:subClassOf :DeathInjury ;
         skos:definition "Event consisting in the injury of a migrant crossing a border"@en ,
-                                                         "Evènement ante mortem où un migrant est blessé lors d'une tentative de franchissement d'une frontière."@fr ;
+                        "Evènement ante mortem où un migrant est blessé lors d'une tentative de franchissement d'une frontière."@fr ;
         skos:prefLabel "Blessure"@fr ,
-                                                        "Injury"@en .
+                       "Injury"@en .
 
 
-###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence/Media
+###  http://purl.org/frontierelethale/onto/Media
 :Media rdf:type owl:Class ;
        rdfs:subClassOf :Source ;
        skos:definition "La source d'information vient d'un média"@fr ,
-                                                        "The information source comes from a media"@en ;
+                       "The information source comes from a media"@en ;
        skos:prefLabel "Media"@en ,
-                                                       "Media"@fr .
+                      "Media"@fr .
 
 
-###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence/OfficialDocument
+###  http://purl.org/frontierelethale/onto/OfficialDocument
 :OfficialDocument rdf:type owl:Class ;
                   rdfs:subClassOf :Source ;
                   skos:definition "Document officiel attestant du passage ou de la mort d'un migrant"@fr ,
-                                                                   "Official document attesting the passage or the death of a migrant"@en ;
+                                  "Official document attesting the passage or the death of a migrant"@en ;
                   skos:prefLabel "Document officiel"@fr ,
-                                                                  "Official document"@en .
+                                 "Official document"@en .
 
 
-###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence/OtherOfficialDocument
+###  http://purl.org/frontierelethale/onto/OtherOfficialDocument
 :OtherOfficialDocument rdf:type owl:Class ;
                        rdfs:subClassOf :OfficialDocument ;
                        skos:definition "Autre document officiel attestant du passage ou de la mort d'un migrant"@fr ,
-                                                                        "Other official document attesting the passage or the death of a migrant"@en ;
+                                       "Other official document attesting the passage or the death of a migrant"@en ;
                        skos:prefLabel "Autre document officiel"@fr ,
-                                                                       "Other offical document"@en .
+                                      "Other offical document"@en .
 
 
-###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence/Person
+###  http://purl.org/frontierelethale/onto/Person
 :Person rdf:type owl:Class ;
         skos:definition "A person undertakes a journey between two countries"@en ,
-                                                         "Un personne entreprend un trajet entre deux pays"@fr ;
+                        "Un personne entreprend un trajet entre deux pays"@fr ;
         skos:prefLabel "Person"@en ,
-                                                        "Personne"@fr .
+                       "Personne"@fr .
 
 
-###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence/Source
+###  http://purl.org/frontierelethale/onto/Source
 :Source rdf:type owl:Class ;
         skos:definition "Information source of an event"@en ,
-                                                         "Source de l'information d'un évènement"@fr ;
+                        "Source de l'information d'un évènement"@fr ;
         skos:prefLabel "Source"@en ,
-                                                        "Source"@fr .
+                       "Source"@fr .
 
 
-###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence/Testimony
+###  http://purl.org/frontierelethale/onto/Testimony
 :Testimony rdf:type owl:Class ;
            rdfs:subClassOf :IndividualEvent ;
            skos:definition "Ante mortem event consisting in one person seing a migrant without getting directly in contact with him."@en ,
-                                                            "Evènement ante mortem consistant en une personne ayant vu un migrant sans être directement entré en contact avec celui-ci."@fr ;
+                           "Evènement ante mortem consistant en une personne ayant vu un migrant sans être directement entré en contact avec celui-ci."@fr ;
            skos:prefLabel "Testimony"@en ,
-                                                           "Témoignage"@fr .
+                          "Témoignage"@fr .
 
 
-###  http://www.semanticweb.org/bresra/ontologies/2025/5/thesaurusSequence/Trace
+###  http://purl.org/frontierelethale/onto/Trace
 :Trace rdf:type owl:Class ;
        rdfs:subClassOf :IndividualEvent ;
        skos:definition "Ante mortem event consisting in a abandonned object owned by a migrant at a given moment of his journey"@en ,
-                                                        "Evènement ante mortem consistant dans un objet laissé par un migrant à un moment donné de son voyage"@fr ;
+                       "Evènement ante mortem consistant dans un objet laissé par un migrant à un moment donné de son voyage"@fr ;
        skos:prefLabel "Trace"@en ,
-                                                       "Trace"@fr .
+                      "Trace"@fr .
 
 
 #################################################################
